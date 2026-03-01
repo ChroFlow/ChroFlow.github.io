@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ChroFlow — Daily Notes, Passive Tracking &amp; Timeline Search</title>
+  <meta name="description" content="ChroFlow is a beautiful macOS and Windows desktop app for daily notes, passive time tracking, and visual timeline search. Free to download." />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="ChroFlow — Daily Notes &amp; Timeline" />
+  <meta property="og:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
+  <meta property="og:image"       content="images/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="ChroFlow" />
+  <meta name="twitter:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- ══════════════════════════════════════════════════════
+       TOP NAV  (hidden on hero, revealed on scroll)
+       ══════════════════════════════════════════════════════ -->
+  <nav id="topnav" class="topnav topnav--hidden" aria-label="Main navigation">
+    <div class="topnav__inner">
+
+      <a href="#hero" class="topnav__logo" aria-label="ChroFlow home">
+        <img src="images/logo.png" alt="ChroFlow" />
+      </a>
+
+      <ul class="topnav__links" role="list">
+        <li><a href="#features" data-i18n="nav.features">Features</a></li>
+        <li><a href="#download" data-i18n="nav.download">Download</a></li>
+        <li><a href="#pricing"  data-i18n="nav.pricing" >Pricing</a></li>
+        <li><a href="#contact"  data-i18n="nav.contact" >Contact</a></li>
+      </ul>
+
+      <button id="lang-switcher" class="topnav__lang" aria-label="Switch language">EN</button>
+
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Hero">
+      <div class="hero__inner">
+        <img src="images/logo.png" alt="ChroFlow" class="hero__logo" />
+        <a href="#download" class="btn btn--primary" data-i18n="hero.cta">Download Free</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PAIN POINTS
+         ══════════════════════════════════════════════════════ -->
+    <section id="pain" class="pain" aria-label="Pain points">
+      <div class="pain__inner">
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q1">You were busy all day.<br>Where did your time actually go?</p>
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q2">You wrote it down.<br>Why can't you find it a month later?</p>
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q3">You use three apps to stay organized.<br>Why does it still feel exhausting?</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SOLUTION INTRO
+         ══════════════════════════════════════════════════════ -->
+    <section id="solution" class="solution" aria-label="Solution">
+      <div class="solution__inner">
+        <h2 class="solution__title reveal-on-scroll" data-i18n="solution.title">ChroFlow keeps your time and thoughts in one place.</h2>
+        <p class="solution__tagline reveal-on-scroll" data-i18n="solution.tagline">Capture freely. Look back clearly.</p>
+        <p class="solution__founder reveal-on-scroll" data-i18n="solution.founder">
+          Built by a Harvard-trained researcher, for thinkers and builders whose best work doesn't happen in meetings.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CORE FEATURES  (pinned scroll)
+         ══════════════════════════════════════════════════════ -->
+    <section id="features" class="features" aria-label="Features">
+
+      <div class="features__heading-wrap reveal-on-scroll">
+        <h2 data-i18n="features.heading">How ChroFlow works</h2>
+      </div>
+
+      <div class="features__track">
+
+        <!-- LEFT: sticky screenshot pane (desktop only) -->
+        <div class="features__sticky-pane" aria-hidden="true">
+          <div class="features__shots">
+
+            <div class="feat-shot feat-shot--active feat-shot--placeholder" id="shot-1">
+              <span>Daily Notes</span>
+            </div>
+
+            <div class="feat-shot feat-shot--placeholder" id="shot-2">
+              <span>Passive Tracking</span>
+            </div>
+
+            <div class="feat-shot feat-shot--placeholder" id="shot-3">
+              <span>Timeline Search</span>
+            </div>
+
+            <div class="feat-shot feat-shot--placeholder" id="shot-4">
+              <span>Weekly Review</span>
+            </div>
+
+          </div>
+        </div><!-- /features__sticky-pane -->
+
+        <!-- RIGHT: scrolling steps -->
+        <div class="features__steps">
+
+          <!-- Step 1 -->
+          <div class="feat-step feat-step--active" data-shot="shot-1">
+            <!-- Mobile screenshot card (hidden on desktop) -->
+            <div class="feat-step__shot-mobile feat-shot--placeholder" id="shot-mobile-1">
+              <span>Daily Notes</span>
+            </div>
+            <div class="feat-step__num" aria-hidden="true">01</div>
+            <h3 class="feat-step__title" data-i18n="features.f1.title">Daily Notes</h3>
+            <p class="feat-step__desc" data-i18n="features.f1.desc">
+              Write freely, every day. Notes auto-organize by date, so your thoughts always have a home. Full Markdown support included.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="feat-step" data-shot="shot-2">
+            <div class="feat-step__shot-mobile feat-shot--placeholder" id="shot-mobile-2">
+              <span>Passive Tracking</span>
+            </div>
+            <div class="feat-step__num" aria-hidden="true">02</div>
+            <h3 class="feat-step__title" data-i18n="features.f2.title">Passive Time Tracking</h3>
+            <p class="feat-step__desc" data-i18n="features.f2.desc">
+              No timers to start or stop. ChroFlow silently logs what you work on while you work — zero friction, complete insight.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="feat-step" data-shot="shot-3">
+            <div class="feat-step__shot-mobile feat-shot--placeholder" id="shot-mobile-3">
+              <span>Timeline Search</span>
+            </div>
+            <div class="feat-step__num" aria-hidden="true">03</div>
+            <h3 class="feat-step__title" data-i18n="features.f3.title">Chroline Timeline</h3>
+            <p class="feat-step__desc" data-i18n="features.f3.desc">
+              Search your entire history of notes and activity in one visual timeline. Find anything from any day, instantly.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="feat-step" data-shot="shot-4">
+            <div class="feat-step__shot-mobile feat-shot--placeholder" id="shot-mobile-4">
+              <span>Weekly Review</span>
+            </div>
+            <div class="feat-step__num" aria-hidden="true">04</div>
+            <h3 class="feat-step__title" data-i18n="features.f4.title">Weekly Review</h3>
+            <p class="feat-step__desc" data-i18n="features.f4.desc">
+              See your week at a glance. ChroFlow surfaces patterns in how you spent your time, so each week gets better than the last.
+            </p>
+          </div>
+
+        </div><!-- /features__steps -->
+      </div><!-- /features__track -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         DOWNLOAD
+         ══════════════════════════════════════════════════════ -->
+    <section id="download" class="download" aria-label="Download">
+      <div class="download__inner">
+
+        <h2 class="download__title reveal-on-scroll" data-i18n="download.title">Download ChroFlow</h2>
+        <p class="download__sub reveal-on-scroll" data-i18n="download.sub">Free to start. No account required.</p>
+
+        <div class="download__btns reveal-on-scroll">
+
+          <!-- macOS button -->
+          <a href="#" id="btn-mac" class="btn btn--download btn--mac" aria-label="Download ChroFlow for macOS Apple Silicon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span class="btn-label" data-i18n="download.mac">Download for Mac</span>
+            <span class="btn-sub"   data-i18n="download.mac.sub">Apple Silicon · macOS 13+</span>
+          </a>
+
+          <!-- Windows button -->
+          <a href="#" id="btn-win" class="btn btn--download btn--win" aria-label="Download ChroFlow for Windows">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 12V6.75l6-1.32v6.48H3zM20.5 3v8.5H11V4.07L20.5 3zM3 13h6v6.43l-6-1.29V13zM11 13.5h9.5V21l-9.5-1.33V13.5z"/>
+            </svg>
+            <span class="btn-label" data-i18n="download.win">Download for Windows</span>
+            <span class="btn-sub"   data-i18n="download.win.sub">Windows 10+</span>
+          </a>
+
+        </div>
+
+        <p class="download__note reveal-on-scroll" data-i18n="download.note">Intel Mac build also available.</p>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PRICING
+         ══════════════════════════════════════════════════════ -->
+    <section id="pricing" class="pricing" aria-label="Pricing">
+      <div class="pricing__inner">
+
+        <div class="pricing__header reveal-on-scroll">
+          <h2 data-i18n="pricing.heading">Simple pricing</h2>
+          <p data-i18n="pricing.sub">Start free. Upgrade when you're ready.</p>
+        </div>
+
+        <div class="pricing__grid">
+
+          <!-- Lite -->
+          <div class="pricing-card reveal-on-scroll">
+            <div class="pricing-card__name" data-i18n="pricing.lite.name">Lite</div>
+            <div class="pricing-card__price">
+              <span class="amount" data-i18n="pricing.lite.price">Free</span>
+              <span class="sub"    data-i18n="pricing.lite.price.sub">forever</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li data-i18n="pricing.lite.f1">Daily notes</li>
+              <li data-i18n="pricing.lite.f2">7-day timeline</li>
+              <li data-i18n="pricing.lite.f3">Basic full-text search</li>
+              <li data-i18n="pricing.lite.f4">Local storage</li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#download" class="btn btn--secondary" data-i18n="pricing.lite.cta">Download Free</a>
+            </div>
+          </div>
+
+          <!-- Pro (gradient border wrapper) -->
+          <div class="pricing-card--pro-wrap reveal-on-scroll">
+            <div class="pricing-card pricing-card--pro">
+              <span class="pricing-card__badge" data-i18n="pricing.pro.badge">Most popular</span>
+              <div class="pricing-card__name" data-i18n="pricing.pro.name">Pro</div>
+              <div class="pricing-card__price">
+                <span class="amount" data-i18n="pricing.pro.price">$8</span>
+                <span class="sub"    data-i18n="pricing.pro.price.sub">/ month</span>
+              </div>
+              <ul class="pricing-card__features" role="list">
+                <li data-i18n="pricing.pro.f1">Everything in Lite</li>
+                <li data-i18n="pricing.pro.f2">Unlimited timeline history</li>
+                <li data-i18n="pricing.pro.f3">Passive time tracking</li>
+                <li data-i18n="pricing.pro.f4">Advanced search &amp; filters</li>
+                <li data-i18n="pricing.pro.f5">Cloud backup &amp; sync</li>
+              </ul>
+              <div class="pricing-card__cta">
+                <a href="#" class="btn btn--primary" data-i18n="pricing.pro.cta">Get Pro</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /pricing__grid -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         TESTIMONIALS
+         ══════════════════════════════════════════════════════ -->
+    <section id="testimonials" class="testimonials" aria-label="Testimonials">
+      <div class="testimonials__inner">
+
+        <h2 class="testimonials__heading reveal-on-scroll" data-i18n="testimonials.heading">What people are saying</h2>
+
+        <div class="testimonials__grid">
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t1.quote">
+              "ChroFlow changed how I end my workday. I finally know where my hours actually went."
+            </blockquote>
+            <cite data-i18n="testimonials.t1.author">— Sarah K., researcher</cite>
+          </article>
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t2.quote">
+              "The passive tracking is magic. It works quietly in the background and I get a full picture of my week without doing anything extra."
+            </blockquote>
+            <cite data-i18n="testimonials.t2.author">— Marcus T., writer</cite>
+          </article>
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t3.quote">
+              "I've tried every notes app out there. ChroFlow is the first one that also tells me how long I actually spent on each project."
+            </blockquote>
+            <cite data-i18n="testimonials.t3.author">— Yuna L., product designer</cite>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTACT
+         ══════════════════════════════════════════════════════ -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <div class="contact__inner">
+        <h2 class="contact__heading reveal-on-scroll" data-i18n="contact.heading">Get in touch</h2>
+        <p class="contact__lead reveal-on-scroll" data-i18n="contact.lead">Questions, feedback, or just want to say hello?</p>
+        <a href="mailto:hello@chroflow.app" class="contact__email reveal-on-scroll" data-i18n="contact.email">hello@chroflow.app</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <a href="#hero" class="footer__logo" aria-label="ChroFlow home">
+        <img src="images/logo.png" alt="ChroFlow" />
+      </a>
+
+      <p class="footer__copy" data-i18n="footer.copy">© 2026 ChroFlow. All rights reserved.</p>
+
+      <nav class="footer__links" aria-label="Footer links">
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
+      </nav>
+
+    </div>
+  </footer>
+
+  <!-- Scripts (no CDN — works on file://) -->
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
