@@ -1,71 +1,198 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ChroFlow — Coming Soon</title>
-  <meta name="description" content="ChroFlow is coming soon. Daily notes, passive time tracking, and visual timeline search — all in one place." />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: #1d1d1f;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-      text-align: center;
-    }
+  <title>ChroFlow — Daily Notes, Passive Tracking &amp; Timeline Search</title>
+  <meta name="description" content="ChroFlow is a beautiful macOS and Windows desktop app for daily notes, passive time tracking, and visual timeline search. Free to download." />
 
-    .logo {
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-    }
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="ChroFlow — Daily Notes &amp; Timeline" />
+  <meta property="og:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
+  <meta property="og:image"       content="images/logo.png" />
 
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #FF6B6B, #9B59B6, #4A90D9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="ChroFlow" />
+  <meta name="twitter:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
 
-    p {
-      font-size: 1.125rem;
-      color: #6e6e73;
-      max-width: 400px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #4A90D9;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-
-    footer {
-      position: fixed;
-      bottom: 1.5rem;
-      font-size: 0.8rem;
-      color: #a0a0a5;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Coming Soon</h1>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#hero" class="skip-link">Skip to content</a>
 
-  <p>We're putting the finishing touches on ChroFlow.<br>
+  <!-- ══════════════════════════════════════════════════════
+       TOP NAV  (hidden on hero, revealed on scroll)
+       ══════════════════════════════════════════════════════ -->
+  <nav id="topnav" class="topnav topnav--hidden" aria-label="Main navigation">
+    <div class="topnav__inner">
 
-  <footer>© 2026 ChroFlow</footer>
+      <a href="#hero" class="topnav__logo" aria-label="ChroFlow home">
+        <img src="images/logo.png" alt="ChroFlow" />
+      </a>
+
+      <ul class="topnav__links" role="list">
+        <li><a href="#features" data-i18n="nav.features">Features</a></li>
+        <li><a href="#download" data-i18n="nav.download">Download</a></li>
+        <li><a href="#pricing"  data-i18n="nav.pricing" >Pricing</a></li>
+        <li><a href="#faq"      data-i18n="nav.faq"     >FAQ</a></li>
+        <li><a href="#contact"  data-i18n="nav.contact" >Contact</a></li>
+      </ul>
+
+      <button id="lang-switcher" class="topnav__lang" aria-label="Switch language">EN</button>
+
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Hero">
+      <div class="hero__inner">
+        <img src="images/logo.png" alt="ChroFlow" class="hero__logo" />
+        <a href="#download" class="btn btn--primary" data-i18n="hero.cta">Download Free</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PAIN POINTS
+         ══════════════════════════════════════════════════════ -->
+    <section id="pain" class="pain" aria-label="Pain points">
+      <div class="pain__inner">
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q1">You were busy all day.<br>Where did your time actually go?</p>
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q2">You wrote it down.<br>Why can't you find it a month later?</p>
+        <p class="pain__q reveal-on-scroll" data-i18n-html="pain.q3">You use three apps to stay organized.<br>Why does it still feel exhausting?</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SOLUTION INTRO
+         ══════════════════════════════════════════════════════ -->
+    <section id="solution" class="solution" aria-label="Solution">
+      <div class="solution__inner">
+        <h2 class="solution__title reveal-on-scroll" data-i18n="solution.title">ChroFlow keeps your time and thoughts in one place.</h2>
+        <p class="solution__tagline reveal-on-scroll" data-i18n="solution.tagline">Capture freely. Look back clearly.</p>
+        <p class="solution__founder reveal-on-scroll" data-i18n="solution.founder">
+          Built by a Harvard-trained researcher, for thinkers and builders whose best work doesn't happen in meetings.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CORE FEATURES  (full-width sticky scroll)
+         ══════════════════════════════════════════════════════ -->
+    <section id="features" class="features" aria-label="Features">
+
+      <div class="features__header reveal-on-scroll">
+        <h2 data-i18n="features.heading">How ChroFlow works</h2>
+      </div>
+
+      <div class="features__track">
+
+        <!-- Full-width sticky screenshot backdrop -->
+        <div class="features__sticky-bg" aria-hidden="true">
+          <div class="features__shots">
+            <div class="feat-shot active" id="shot-1">
+              <video src="video/01_overview.mp4" muted playsinline preload="auto"
+                     data-video-scale="1"
+                     data-video-pos="center"
+                     data-video-fit="cover"></video>
+            </div>
+          </div>
+        </div><!-- /features__sticky-bg -->
+
+        <!-- Scrolling steps overlay -->
+        <div class="features__steps">
+
+          <!-- Step 1 — card on LEFT -->
+          <div class="feat-step feat-step--right feat-step--no-card is-active" data-shot="shot-1">
+            <div class="feat-card">
+              <span class="feat-step__num">01</span>
+              <h3 class="feat-step__title" data-i18n="features.f1.title">Daily Notes</h3>
+              <p class="feat-step__desc" data-i18n="features.f1.desc">Write freely, every day. Notes auto-organize by date, so your thoughts always have a home. Full Markdown support included.</p>
+            </div>
+          </div>
+
+        </div><!-- /features__steps -->
+
+        <!-- Extra scroll space so the last video stays pinned while the next
+             section slides up from below. Height matches the negative margin
+             on #download so the two cancel out (no net change to page length). -->
+        <div class="features__end-spacer" aria-hidden="true"></div>
+
+      </div><!-- /features__track -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         DOWNLOAD
+         ══════════════════════════════════════════════════════ -->
+    <section id="download" class="download" aria-label="Download">
+      <div class="download__inner">
+        <h2 class="download__title reveal-on-scroll">Coming Soon</h2>
+        <p class="download__sub reveal-on-scroll">We're working hard on bringing ChroFlow to you. Stay tuned!</p>
+      </div>
+    </section>
+    
+    <!-- ══════════════════════════════════════════════════════
+         FAQ
+         ══════════════════════════════════════════════════════ -->
+    <section id="faq" class="faq" aria-label="FAQ">
+      <div class="faq__inner">
+        <h2 class="faq__heading reveal-on-scroll" data-i18n="faq.heading"></h2>
+        <div class="faq__list">
+
+          <div class="faq__item reveal-on-scroll">
+            <h3 class="faq__q" data-i18n="faq.q1.q"></h3>
+            <p class="faq__a" data-i18n="faq.q1.a"></p>
+          </div>
+
+          <div class="faq__item reveal-on-scroll">
+            <h3 class="faq__q" data-i18n="faq.q2.q"></h3>
+            <p class="faq__a" data-i18n="faq.q2.a"></p>
+          </div>
+
+          <div class="faq__item reveal-on-scroll">
+            <h3 class="faq__q" data-i18n="faq.q3.q"></h3>
+            <p class="faq__a" data-i18n="faq.q3.a"></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTACT
+         ══════════════════════════════════════════════════════ -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <div class="contact__inner">
+        <h2 class="contact__heading reveal-on-scroll" data-i18n="contact.heading">Get in touch</h2>
+        <p class="contact__lead reveal-on-scroll" data-i18n="contact.lead">Questions, feedback, or just want to say hello?</p>
+        <a href="mailto:duochan.work@gmail.com" class="contact__email reveal-on-scroll" data-i18n="contact.email">hello@chroflow.app</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <p class="footer__copy" data-i18n="footer.copy">© 2026 ChroFlow. All rights reserved.</p>
+
+    </div>
+  </footer>
+
+  <!-- Scripts (no CDN — works on file://) -->
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
