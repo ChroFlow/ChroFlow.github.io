@@ -33,6 +33,14 @@
     #8dafdd80 83.33%,
     #c09bf380 100%
   );
+  --gradient-brand-deep: linear-gradient(
+    135deg,
+    #e05050 0%,
+    #d4882a 25%,
+    #4aaa60 55%,
+    #3a82cc 80%,
+    #8855dd 100%
+  );
 
   /* Surface / text */
   --color-bg:      #ffffff;
@@ -348,7 +356,7 @@ section {
   gap: 3rem;
 }
 .pain__q {
-  font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: var(--fw-light);
   font-style: italic;
   line-height: 1.55;
@@ -423,170 +431,194 @@ section {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   FEATURES — PINNED SCROLL
+   FEATURES — FULL-WIDTH STICKY SCROLL
    ═══════════════════════════════════════════════════════════ */
 .features {
   background: var(--color-bg);
-  padding: var(--section-pad) 0;
+  padding-top: var(--section-pad);
 }
-.features__heading-wrap {
+
+.features__header {
   text-align: center;
-  padding: 0 var(--side-pad);
-  margin-bottom: 4rem;
+  padding: 0 var(--side-pad) 3rem;
 }
-.features__heading-wrap h2 {
+.features__header h2 {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: var(--fw-bold);
   letter-spacing: -0.02em;
 }
 
-/* Two-column sticky grid */
 .features__track {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--side-pad);
-  gap: 2rem;
+  position: relative;
 }
 
-/* LEFT: sticky screenshot pane */
-.features__sticky-pane {
+/* Sticky screenshot backdrop — full viewport width */
+.features__sticky-bg {
   position: sticky;
-  top: calc(var(--topnav-h) + 2.5rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  top: var(--topnav-h);
+  height: calc(100vh - var(--topnav-h));
+  z-index: 0;
+  overflow: hidden;
+  background: var(--color-surface);
+  will-change: transform; /* JS scroll-exit animation */
 }
+
+/* Screenshot stack — one visible at a time */
 .features__shots {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 18px;
-  overflow: hidden;
-  background: var(--color-surface);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.09),
-              0  8px 24px rgba(0, 0, 0, 0.06);
+  height: 100%;
 }
 .feat-shot {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.feat-shot--active { opacity: 1; }
 
-/* Placeholder styling (shown until real screenshots drop in) */
-.feat-shot--placeholder {
-  background: var(--color-surface);
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-/* Tinted placeholders per feature */
-#shot-1.feat-shot--placeholder { background: #fff8f5; color: #c0635c; }
-#shot-2.feat-shot--placeholder { background: #f6f0fc; color: #8248a8; }
-#shot-3.feat-shot--placeholder { background: #f0f6fd; color: #3a78c9; }
-#shot-4.feat-shot--placeholder { background: #f0faf4; color: #1e9450; }
+  /* Screenshot aspect ratio — adjust 16/10 to match your actual screenshots */
+  aspect-ratio: 16 / 10;
+  /* Width = min(90% of container width, 90% of container height × ratio)
+     → whichever axis is tighter wins, always leaves breathing room on all sides */
+  width: min(90%, calc((100vh - var(--topnav-h)) * 0.9 * 1.6));
 
-.feat-shot--placeholder::before {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: currentColor;
-  opacity: 0.18;
-  margin-bottom: 0.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
+}
+.feat-shot.active { opacity: 1; }
+
+/* Placeholder tints (shown until real screenshots arrive) */
+#shot-1 { background: #fff8f5; }
+#shot-2 { background: #f6f0fc; }
+#shot-3 { background: #f0f6fd; }
+#shot-4 { background: #f0faf4; }
+
+/* Screenshot images — fill the card */
+.feat-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* RIGHT: scrolling steps */
-.features__steps { padding: 0; }
+/* Video slots
+   Per-video tuning via CSS custom props on the parent .feat-shot:
+     --video-scale   : zoom factor, default 1   (e.g. 1.15 to crop baked-in black bars)
+     --video-pos     : object-position,  default center (e.g. "center top", "20% 50%")
+   Example: <div class="feat-shot" id="shot-2" style="--video-scale:1.15; --video-pos:center top"> */
+.feat-shot video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--video-pos, center);
+  transform: scale(var(--video-scale, 1));
+  transform-origin: center;
+}
+
+/* Scrolling steps — overlaps the sticky bg */
+.features__steps {
+  margin-top: calc(-100vh + var(--topnav-h));
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .feat-step {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem 2rem;
-  opacity: 0.3;
-  transition: opacity 0.45s var(--ease-out);
+  align-items: center;
+  justify-content: flex-start;   /* default: card on the LEFT */
+  padding: 5vh 5vw;
+  pointer-events: none;
 }
-.feat-step--active { opacity: 1; }
+.feat-step--right {
+  justify-content: flex-end;     /* card on the RIGHT */
+}
+
+/* Mobile screenshot thumbnail (hidden on desktop) */
+.feat-step__shot { display: none; }
+
+/* Frosted glass text card */
+.feat-card {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  max-width: 520px;
+  box-shadow: 0 2px 60px rgba(0, 0, 0, 0.20);
+  opacity: 0.35;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.feat-step.is-active .feat-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add class feat-step--no-card to a .feat-step to fully hide its card */
+.feat-step--no-card .feat-card {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .feat-step__num {
-  font-size: 0.8rem;
+  display: block;
+  font-size: 1.25rem;
   font-weight: var(--fw-bold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--color-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 .feat-step__title {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
 }
 .feat-step__desc {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-size: 1.2rem;
   font-weight: var(--fw-light);
   color: var(--color-muted);
-  line-height: 1.7;
-  max-width: 420px;
+  line-height: 1.6;
 }
 
-/* Inline mobile shot (hidden on desktop) */
-.feat-step__shot-mobile {
-  display: none;
+/* Extra scroll room after last step — keeps sticky bg pinned while
+   the download section slides up from below. Must match the
+   negative margin-top on .download exactly. */
+.features__end-spacer {
+  /* First 100vh: last video sits alone on screen (pinned, nothing sliding).
+     Next 100vh: .download slides up from below to cover it.
+     Net page-length change vs. .download margin-top (-100vh): +100vh. */
+  height: 200vh;
 }
-/* Tinted mobile placeholders mirror the desktop ones */
-#shot-mobile-1.feat-shot--placeholder { background: #fff8f5; color: #c0635c; }
-#shot-mobile-2.feat-shot--placeholder { background: #f6f0fc; color: #8248a8; }
-#shot-mobile-3.feat-shot--placeholder { background: #f0f6fd; color: #3a78c9; }
-#shot-mobile-4.feat-shot--placeholder { background: #f0faf4; color: #1e9450; }
 
-/* ── Mobile: collapse sticky layout ─────────────────────── */
+/* ── Mobile: keep sticky scroll, tweak card width/alignment ─ */
 @media (max-width: 768px) {
-  .features__track {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 var(--side-pad);
+  .feat-step,
+  .feat-step--right { justify-content: flex-start; }
+
+  .feat-card {
+    max-width: calc(100% - 10vw);
+    padding: 1.5rem;
   }
-  .features__sticky-pane { display: none; }
-  .feat-step {
-    min-height: auto;
-    opacity: 1 !important;
-    padding: 0;
-    margin-bottom: 2rem;
-  }
-  .feat-step__shot-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 1.25rem;
-  }
-  .feat-step__desc { max-width: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════
    DOWNLOAD
    ═══════════════════════════════════════════════════════════ */
 .download {
-  background: var(--color-surface);
+  /* Pull up by exactly the spacer height so this section appears at the
+     viewport bottom at the same moment the spacer begins — it then slides
+     up over the pinned last-video while the sticky bg is still active. */
+  margin-top: -100vh;
+  position: relative;
+  z-index: 10;          /* above features__sticky-bg (z-index:0) and steps (z-index:2) */
+  background: var(--color-bg);
   padding: var(--section-pad) var(--side-pad);
   text-align: center;
 }
@@ -620,11 +652,81 @@ section {
   color: var(--color-muted);
 }
 
+/* Install guide */
+.install-guide {
+  width: 100%;
+  max-width: 560px;
+}
+.install-guide__panel {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  text-align: left;
+  animation: guideIn 0.3s ease;
+}
+@keyframes guideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.install-guide__panel h3 {
+  font-size: 1.05rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.6rem;
+}
+.install-guide__note {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+.install-guide__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  counter-reset: step;
+}
+.install-guide__steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+.install-guide__steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: var(--gradient-brand-deep);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+.install-guide__tip {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1rem;
+  background: #e8f5e9;
+  border-left: 3px solid var(--color-green);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.84rem;
+  color: #2e6b3e;
+  line-height: 1.55;
+}
+
 /* ═══════════════════════════════════════════════════════════
    PRICING
    ═══════════════════════════════════════════════════════════ */
 .pricing {
-  background: var(--color-bg);
+  background: var(--color-surface);
   padding: var(--section-pad) var(--side-pad);
   text-align: center;
 }
@@ -659,7 +761,7 @@ section {
 .pricing-card {
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  background: var(--color-surface);
+  background: #e9ebed;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -681,8 +783,8 @@ section {
   top: -13px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gradient-brand-h);
-  color: #fff;
+  background: #d4eab7;                                                                                                                                                                                                     
+  color: #545151; 
   font-size: 0.75rem;
   font-weight: var(--fw-bold);
   letter-spacing: 0.08em;
@@ -709,9 +811,51 @@ section {
   letter-spacing: -0.03em;
   line-height: 1;
 }
+.pricing-card--pro .pricing-card__price .amount {
+  font-size: 2.3rem;
+}
 .pricing-card__price .sub {
   font-size: 0.9rem;
   color: var(--color-muted);
+}
+.pricing-card__forever {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+  background: var(--gradient-brand-deep);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pricing-card__price-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.pricing-card__onetime {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: #de4444;
+}
+.pricing-card__earlybird-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.15rem 0;
+}
+.pricing-card__original {
+  font-size: 1.25rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+.pricing-card__earlybird-badge {
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  color: #fff;
+  background: var(--color-coral);
+  padding: 0.22em 0.65em;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 .pricing-card__features {
   display: flex;
@@ -733,6 +877,8 @@ section {
   color: var(--color-green);
   width: 1.2em;
 }
+.pricing-placeholder::before { content: none !important; }
+.pricing-placeholder { min-height: 1.6rem; }
 .pricing-card__cta { margin-top: auto; }
 .pricing-card__cta .btn { width: 100%; justify-content: center; }
 
@@ -740,7 +886,7 @@ section {
    TESTIMONIALS
    ═══════════════════════════════════════════════════════════ */
 .testimonials {
-  background: var(--color-surface);
+  background: var(--color-bg);
   padding: var(--section-pad) var(--side-pad);
   text-align: center;
 }
@@ -764,7 +910,7 @@ section {
   .testimonials__grid { grid-template-columns: 1fr; }
 }
 .testimonial-card {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-radius: 18px;
   padding: 2rem;
   display: flex;
@@ -783,6 +929,47 @@ section {
   font-style: normal;
   font-weight: var(--fw-semibold);
   color: var(--color-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════════════ */
+.faq {
+  background: var(--color-surface);
+  padding: var(--section-pad) var(--side-pad);
+}
+.faq__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq__heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  margin-bottom: 3rem;
+}
+.faq__list {
+  display: flex;
+  flex-direction: column;
+}
+.faq__item {
+  padding: 2rem 0;
+  border-top: 1px solid #e5e5e7;
+}
+.faq__item:last-child {
+  border-bottom: 1px solid #e5e5e7;
+}
+.faq__q {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+.faq__a {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  color: var(--color-muted);
+  line-height: 1.75;
+  max-width: 620px;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -814,7 +1001,7 @@ section {
 .contact__email {
   font-size: 1.1rem;
   font-weight: var(--fw-semibold);
-  background: var(--gradient-brand);
+  background: var(--gradient-brand-deep);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -837,7 +1024,7 @@ section {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
