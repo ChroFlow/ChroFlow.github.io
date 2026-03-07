@@ -597,14 +597,62 @@ section {
   height: 200vh;
 }
 
-/* ── Mobile: keep sticky scroll, tweak card width/alignment ─ */
+/* ── Mobile: disable sticky-scroll, revert to normal flow ─── */
 @media (max-width: 768px) {
-  .feat-step,
-  .feat-step--right { justify-content: flex-start; }
+  /* 1. Un-sticky the backdrop — just render it in normal flow */
+  .features__sticky-bg {
+    position: relative;
+    top: auto;
+    height: auto;
+  }
 
+  /* 2. All shots sit in normal flow, stacked, all visible */
+  .features__shots {
+    position: relative;
+    height: auto;
+  }
+  .feat-shot {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    opacity: 1;
+    width: calc(100% - 2 * var(--side-pad));
+    margin: 0 auto;
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  /* 3. Steps flow naturally below the video */
+  .features__steps {
+    margin-top: 0;
+  }
+  .feat-step,
+  .feat-step--right {
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 1.5rem var(--side-pad);
+  }
+
+  /* 4. Cards always fully visible on mobile */
   .feat-card {
-    max-width: calc(100% - 10vw);
+    opacity: 1;
+    transform: none;
+    max-width: 100%;
     padding: 1.5rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
+  }
+
+  /* 5. Un-hide cards that are suppressed on desktop */
+  .feat-step--no-card .feat-card {
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+
+  /* 6. Collapse the spacer + undo download's negative pull-up */
+  .features__end-spacer {
+    height: 0;
   }
 }
 
@@ -621,6 +669,11 @@ section {
   background: var(--color-bg);
   padding: var(--section-pad) var(--side-pad);
   text-align: center;
+}
+@media (max-width: 768px) {
+  .download {
+    margin-top: 0; /* sticky layout is off on mobile, no pull-up needed */
+  }
 }
 .download__inner {
   max-width: 640px;
