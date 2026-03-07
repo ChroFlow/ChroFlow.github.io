@@ -189,6 +189,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    * Scrolling up naturally reverses the video.
    */
   function scrubVideos() {
+    if (window.innerWidth <= 768) return; // no scroll-scrubbing on mobile
     const viewH = window.innerHeight;
     scrubMap.forEach(({ video }, step) => {
       if (!video.duration) return;
@@ -213,6 +214,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function updateStickyExit() {
     if (!stickyBg || !endSpacer) return;
+    if (window.innerWidth <= 768) { stickyBg.style.transform = ''; return; }
     const viewH     = window.innerHeight;
     const spacerTop = endSpacer.getBoundingClientRect().top;
 
@@ -261,12 +263,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   // Hide each video until its first frame at the correct scroll position is decoded,
   // then fade in — this eliminates the black-frame flash on initial load.
+  // On mobile the sticky/scrub system is off, so skip hiding — videos stay visible.
   scrubMap.forEach(({ video }) => {
-    video.style.opacity = '0';
-    video.style.transition = 'opacity 0.3s ease';
-    video.addEventListener('seeked', () => { video.style.opacity = '1'; }, { once: true });
+    if (window.innerWidth > 768) {
+      video.style.opacity = '0';
+      video.style.transition = 'opacity 0.3s ease';
+      video.addEventListener('seeked', () => { video.style.opacity = '1'; }, { once: true });
+    }
     video.addEventListener('loadedmetadata', scrubVideos);
   });
+
+  // On mobile: autoplay all videos since there's no scroll-scrub to drive them
+  if (window.innerWidth <= 768) {
+    featShots.forEach(shot => {
+      const v = shot.querySelector('video');
+      if (v) { v.loop = true; v.play().catch(() => {}); }
+    });
+  }
 
   let raf = false;
   window.addEventListener('scroll', () => {
