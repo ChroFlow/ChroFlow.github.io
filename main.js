@@ -310,21 +310,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     updateStickyExit();
   }
 
-  // Hide each video until its first frame at the correct scroll position is decoded,
-  // then fade in — this eliminates the black-frame flash on initial load.
+  let raf = false;
+
   scrubMap.forEach(({ video }) => {
     const reveal = () => { video.style.opacity = '1'; };
-    video.style.opacity = isIOS ? '1' : '0';
     video.style.transition = 'opacity 0.3s ease';
-    video.addEventListener('loadedmetadata', reveal, { once: true });
-    video.addEventListener('loadeddata', reveal, { once: true });
-    video.addEventListener('canplay', reveal, { once: true });
-    video.addEventListener('seeked', reveal, { once: true });
-    video.addEventListener('loadedmetadata', scrubVideos);
-    video.addEventListener('error', reveal, { once: true });
+
+    if (isIOS) {
+      // iOS ignores preload, so video.duration stays NaN and seeking is locked
+      // until play() has been called at least once. Call play() to unlock, then
+      // immediately pause — after that, currentTime scrubbing works normally.
+      video.style.opacity = '1';
+      const unlock = () => {
+        video.play().then(() => {
+          video.pause();
+          video.currentTime = 0;
+          scrubVideos();
+        }).catch(() => {
+          // Blocked (rare) — fall back to looping autoplay
+          video.loop = true;
+          video.play().catch(() => {});
+        });
+      };
+      if (video.readyState >= 1) {
+        unlock();
+      } else {
+        video.addEventListener('loadedmetadata', unlock, { once: true });
+        video.load(); // force iOS to start loading
+      }
+      video.addEventListener('loadedmetadata', scrubVideos);
+    } else {
+      video.style.opacity = '0';
+      video.addEventListener('loadedmetadata', reveal, { once: true });
+      video.addEventListener('loadeddata',     reveal, { once: true });
+      video.addEventListener('canplay',        reveal, { once: true });
+      video.addEventListener('seeked',         reveal, { once: true });
+      video.addEventListener('error',          reveal, { once: true });
+      video.addEventListener('loadedmetadata', scrubVideos);
+    }
   });
 
-  let raf = false;
   window.addEventListener('scroll', () => {
     if (!raf) { raf = true; requestAnimationFrame(() => { update(); raf = false; }); }
   }, { passive: true });

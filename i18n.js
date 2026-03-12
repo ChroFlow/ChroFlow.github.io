@@ -22,7 +22,7 @@ const I18N = {
 
     /* ── Solution intro ─────────────────────────────────────── */
     "solution.title":    "ChroFlow keeps your time & thoughts in one place",
-    "solution.tagline":  "Capture freely ｜ Look back clearly ｜ Stay in flow",
+    "solution.tagline":  "Capture freely ｜ Look back easily ｜ Stay in flow",
     "solution.founder":  "Built by a Harvard-trained researcher, for thinkers and builders whose best work doesn't happen in meetings",
 
     /* ── Core features ──────────────────────────────────────── */
