@@ -60,9 +60,17 @@
   --content-max:   1200px;
   --side-pad:      clamp(1.25rem, 5vw, 4rem);
   --section-pad:   clamp(4rem, 10vw, 8rem);
+  --viewport-h:    100vh;
+  --feature-stage-h: calc(var(--viewport-h) - var(--topnav-h));
 
   /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --viewport-h: 100dvh;
+  }
 }
 
 /* ── Reset ───────────────────────────────────────────────── */
@@ -79,6 +87,9 @@ body {
   font-weight: var(--fw-light);
   line-height: 1.65;
   overflow-x: hidden;
+}
+body.nav-open {
+  overflow: hidden;
 }
 img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
@@ -152,10 +163,15 @@ section {
   height: 55px;
   width: auto;
 }
+.topnav__panel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
 .topnav__links {
   display: flex;
   gap: 0.25rem;
-  margin-left: auto; /* push links + lang to right */
 }
 .topnav__links a {
   font-size: 0.9rem;
@@ -178,11 +194,123 @@ section {
   flex-shrink: 0;
 }
 .topnav__lang:hover { background: var(--color-surface); color: var(--color-text); }
+.topnav__menu-btn,
+.topnav__scrim {
+  display: none;
+}
+.topnav__menu-btn {
+  position: relative;
+  z-index: 920;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.topnav__menu-btn span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.topnav__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 905;
+  background: rgba(17, 24, 39, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
 
-/* Mobile nav collapse */
-@media (max-width: 600px) {
-  .topnav__links { gap: 0; }
-  .topnav__links a { font-size: 0.8rem; padding: 0.35rem 0.55rem; }
+/* Mobile nav drawer */
+@media (max-width: 768px) {
+  .topnav__inner {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .topnav__menu-btn {
+    display: inline-flex;
+  }
+
+  .topnav__panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 910;
+    width: min(82vw, 320px);
+    height: var(--viewport-h);
+    padding: calc(var(--topnav-h) + 1rem) 1.1rem 1.25rem;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    box-shadow: -18px 0 48px rgba(15, 23, 42, 0.14);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+  }
+
+  .topnav__links {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .topnav__links a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 0.95rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .topnav__lang {
+    width: 100%;
+    margin-top: auto;
+    padding: 0.9rem 0.95rem;
+    text-align: left;
+    border-radius: 12px;
+  }
+
+  .topnav__scrim {
+    display: block;
+  }
+
+  .topnav.topnav--menu-open .topnav__panel {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .topnav.topnav--menu-open .topnav__scrim {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .topnav.topnav--menu-open .topnav__menu-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .topnav.topnav--menu-open .topnav__menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .topnav.topnav--menu-open .topnav__menu-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -350,20 +478,43 @@ section {
 .pain__inner {
   max-width: var(--content-max);
   margin: 0 auto;
+}
+.pain__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+.pain-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3rem;
 }
-.pain__q {
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  font-weight: var(--fw-light);
-  font-style: italic;
-  line-height: 1.55;
+.pain-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 0.9rem;
+}
+.pain-card__text {
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  line-height: 1.45;
   color: var(--color-text);
   text-align: center;
-  padding: 0 0.1rem;
-  max-width: 600px;
+}
+@media (max-width: 768px) {
+  .pain__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pain-item {
+    width: min(100%, 22rem);
+    margin: 0 auto;
+  }
+
+  .pain-card__image {
+    border-radius: 18px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -456,7 +607,7 @@ section {
 .features__sticky-bg {
   position: sticky;
   top: var(--topnav-h);
-  height: calc(100vh - var(--topnav-h));
+  height: var(--feature-stage-h);
   z-index: 0;
   overflow: hidden;
   background: var(--color-surface);
@@ -481,7 +632,7 @@ section {
   aspect-ratio: 16 / 10;
   /* Width = min(90% of container width, 90% of container height × ratio)
      → whichever axis is tighter wins, always leaves breathing room on all sides */
-  width: min(90%, calc((100vh - var(--topnav-h)) * 0.9 * 1.6));
+  width: min(90%, calc(var(--feature-stage-h) * 0.9 * 1.6));
 
   border-radius: 16px;
   overflow: hidden;
@@ -518,14 +669,14 @@ section {
 
 /* Scrolling steps — overlaps the sticky bg */
 .features__steps {
-  margin-top: calc(-100vh + var(--topnav-h));
+  margin-top: calc(-1 * var(--feature-stage-h));
   position: relative;
   z-index: 2;
   pointer-events: none;
 }
 
 .feat-step {
-  min-height: 100vh;
+  min-height: var(--viewport-h);
   display: flex;
   align-items: center;
   justify-content: flex-start;   /* default: card on the LEFT */
@@ -594,65 +745,41 @@ section {
   /* First 100vh: last video sits alone on screen (pinned, nothing sliding).
      Next 100vh: .download slides up from below to cover it.
      Net page-length change vs. .download margin-top (-100vh): +100vh. */
-  height: 200vh;
+  height: calc(var(--viewport-h) * 2);
 }
 
-/* ── Mobile: disable sticky-scroll, revert to normal flow ─── */
+/* ── Mobile: keep sticky-scroll, tune sizing ─── */
 @media (max-width: 768px) {
-  /* 1. Un-sticky the backdrop — just render it in normal flow */
-  .features__sticky-bg {
-    position: relative;
-    top: auto;
-    height: auto;
-  }
-
-  /* 2. All shots sit in normal flow, stacked, all visible */
-  .features__shots {
-    position: relative;
-    height: auto;
-  }
   .feat-shot {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    opacity: 1;
-    width: calc(100% - 2 * var(--side-pad));
-    margin: 0 auto;
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
+    width: min(94vw, calc(var(--feature-stage-h) * 1.52));
+    border-radius: 14px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
   }
 
-  /* 3. Steps flow naturally below the video */
-  .features__steps {
-    margin-top: 0;
-  }
   .feat-step,
   .feat-step--right {
-    justify-content: flex-start;
-    min-height: auto;
-    padding: 1.5rem var(--side-pad);
+    align-items: flex-end;
+    padding: 1.25rem 1rem 2.25rem;
   }
 
-  /* 4. Cards always fully visible on mobile */
   .feat-card {
-    opacity: 1;
-    transform: none;
-    max-width: 100%;
-    padding: 1.5rem;
+    width: min(84vw, 24rem);
+    max-width: none;
+    padding: 1.25rem 1.25rem 1.35rem;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
   }
 
-  /* 5. Un-hide cards that are suppressed on desktop */
-  .feat-step--no-card .feat-card {
-    opacity: 1 !important;
-    pointer-events: auto;
+  .feat-step__num {
+    font-size: 0.95rem;
   }
 
-  /* 6. Collapse the spacer + undo download's negative pull-up */
-  .features__end-spacer {
-    height: 0;
+  .feat-step__title {
+    font-size: clamp(1.1rem, 5vw, 1.35rem);
+  }
+
+  .feat-step__desc {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 
@@ -663,17 +790,12 @@ section {
   /* Pull up by exactly the spacer height so this section appears at the
      viewport bottom at the same moment the spacer begins — it then slides
      up over the pinned last-video while the sticky bg is still active. */
-  margin-top: -100vh;
+  margin-top: calc(-1 * var(--viewport-h));
   position: relative;
   z-index: 10;          /* above features__sticky-bg (z-index:0) and steps (z-index:2) */
   background: var(--color-bg);
   padding: var(--section-pad) var(--side-pad);
   text-align: center;
-}
-@media (max-width: 768px) {
-  .download {
-    margin-top: 0; /* sticky layout is off on mobile, no pull-up needed */
-  }
 }
 .download__inner {
   max-width: 640px;

@@ -100,6 +100,51 @@ if (topnav && heroSection) {
   navObserver.observe(heroSection);
 }
 
+(function initMobileNav() {
+  const nav = document.getElementById('topnav');
+  const toggle = document.getElementById('nav-toggle');
+  const panel = document.getElementById('topnav-panel');
+  const scrim = document.getElementById('topnav-scrim');
+
+  if (!nav || !toggle || !panel || !scrim) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+  function closeMenu() {
+    nav.classList.remove('topnav--menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+
+  function openMenu() {
+    nav.classList.add('topnav--menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('topnav--menu-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  scrim.addEventListener('click', closeMenu);
+
+  panel.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  mobileQuery.addEventListener('change', e => {
+    if (!e.matches) closeMenu();
+  });
+})();
+
 /* Smooth anchor scroll (respects prefers-reduced-motion) */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
@@ -169,6 +214,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (v) scrubMap.set(step, { shot, video: v });
   });
 
+  function getViewportHeight() {
+    return window.visualViewport?.height || window.innerHeight;
+  }
+
   /** Activate a step and its corresponding screenshot */
   function activateStep(step) {
     featSteps.forEach(s => s.classList.remove('is-active'));
@@ -189,8 +238,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    * Scrolling up naturally reverses the video.
    */
   function scrubVideos() {
-    if (window.innerWidth <= 768) return; // no scroll-scrubbing on mobile
-    const viewH = window.innerHeight;
+    const viewH = getViewportHeight();
     scrubMap.forEach(({ video }, step) => {
       if (!video.duration) return;
       const card = step.querySelector('.feat-card');
@@ -214,8 +262,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function updateStickyExit() {
     if (!stickyBg || !endSpacer) return;
-    if (window.innerWidth <= 768) { stickyBg.style.transform = ''; return; }
-    const viewH     = window.innerHeight;
+    const viewH     = getViewportHeight();
     const spacerTop = endSpacer.getBoundingClientRect().top;
 
     if (spacerTop <= 0) {
@@ -229,7 +276,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   /** Pick whichever card has the most visible pixels on screen */
   function update() {
-    const viewH = window.innerHeight;
+    const viewH = getViewportHeight();
     let best = null;
     let bestArea = 0;
 
@@ -263,28 +310,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   // Hide each video until its first frame at the correct scroll position is decoded,
   // then fade in — this eliminates the black-frame flash on initial load.
-  // On mobile the sticky/scrub system is off, so skip hiding — videos stay visible.
   scrubMap.forEach(({ video }) => {
-    if (window.innerWidth > 768) {
-      video.style.opacity = '0';
-      video.style.transition = 'opacity 0.3s ease';
-      video.addEventListener('seeked', () => { video.style.opacity = '1'; }, { once: true });
-    }
+    const reveal = () => { video.style.opacity = '1'; };
+    video.style.opacity = '0';
+    video.style.transition = 'opacity 0.3s ease';
+    video.addEventListener('loadeddata', reveal, { once: true });
+    video.addEventListener('seeked', reveal, { once: true });
     video.addEventListener('loadedmetadata', scrubVideos);
   });
-
-  // On mobile: autoplay all videos since there's no scroll-scrub to drive them
-  if (window.innerWidth <= 768) {
-    featShots.forEach(shot => {
-      const v = shot.querySelector('video');
-      if (v) { v.loop = true; v.play().catch(() => {}); }
-    });
-  }
 
   let raf = false;
   window.addEventListener('scroll', () => {
     if (!raf) { raf = true; requestAnimationFrame(() => { update(); raf = false; }); }
   }, { passive: true });
+  window.addEventListener('resize', update);
+  window.visualViewport?.addEventListener('resize', update);
 
   update();
 

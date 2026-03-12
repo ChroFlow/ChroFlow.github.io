@@ -16,9 +16,9 @@ const I18N = {
     "hero.cta":       "Download Free",
 
     /* ── Pain points ────────────────────────────────────────── */
-    "pain.q1": "You were busy all day<br>Where did your time actually go?",
-    "pain.q2": "You wrote it down<br>Why can't you find it a month later?",
-    "pain.q3": "You use three apps to stay organized<br>Why does it still feel exhausting?",
+    "pain.c1.text": "Where did your time actually go?",
+    "pain.c2.text": "Why can't you find it a month later?",
+    "pain.c3.text": "Why is it so exhausting to stay organized?",
 
     /* ── Solution intro ─────────────────────────────────────── */
     "solution.title":    "ChroFlow keeps your time & thoughts in one place",
@@ -137,9 +137,9 @@ const I18N = {
     "hero.cta":       "免费下载",
 
     /* ── Pain points ────────────────────────────────────────── */
-    "pain.q1": "忙碌了一整天<br>时间究竟去哪了？",
-    "pain.q2": "你明明记下来了<br>为什么一个月后找不到了？",
-    "pain.q3": "你用了三个软件来整理日程<br>为什么还是觉得精疲力竭？",
+    "pain.c1.text": "忙了一整天，时间究竟去哪了？",
+    "pain.c2.text": "你明明记下来了，为什么一个月后找不到了？",
+    "pain.c3.text": "为什么努力保持井井有条，还是觉得很累？",
 
     /* ── Solution intro ─────────────────────────────────────── */
     "solution.title":    "ChroFlow 让你的时间与思路归于一处",
