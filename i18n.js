@@ -17,7 +17,7 @@ const I18N = {
 
     /* ── Pain points ────────────────────────────────────────── */
     "pain.c1.text": "Where did your time actually go?",
-    "pain.c2.text": "Why can't you find it a month later?",
+    "pain.c2.text": "Why can't you find your notes a month later?",
     "pain.c3.text": "Why is it so exhausting to stay organized?",
 
     /* ── Solution intro ─────────────────────────────────────── */
@@ -138,7 +138,7 @@ const I18N = {
 
     /* ── Pain points ────────────────────────────────────────── */
     "pain.c1.text": "忙了一整天，时间究竟去哪了？",
-    "pain.c2.text": "你明明记下来了，为什么一个月后找不到了？",
+    "pain.c2.text": "明明记下来了，为什么一个月后找不到了？",
     "pain.c3.text": "为什么努力保持井井有条，还是觉得很累？",
 
     /* ── Solution intro ─────────────────────────────────────── */

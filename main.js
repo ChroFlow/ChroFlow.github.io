@@ -200,6 +200,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 (function initFeatures() {
   const featSteps = document.querySelectorAll('.feat-step');
   const featShots = document.querySelectorAll('.features__shots .feat-shot');
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
   if (!featSteps.length || !featShots.length) return;
 
@@ -312,11 +314,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   // then fade in — this eliminates the black-frame flash on initial load.
   scrubMap.forEach(({ video }) => {
     const reveal = () => { video.style.opacity = '1'; };
-    video.style.opacity = '0';
+    video.style.opacity = isIOS ? '1' : '0';
     video.style.transition = 'opacity 0.3s ease';
+    video.addEventListener('loadedmetadata', reveal, { once: true });
     video.addEventListener('loadeddata', reveal, { once: true });
+    video.addEventListener('canplay', reveal, { once: true });
     video.addEventListener('seeked', reveal, { once: true });
     video.addEventListener('loadedmetadata', scrubVideos);
+    video.addEventListener('error', reveal, { once: true });
   });
 
   let raf = false;
