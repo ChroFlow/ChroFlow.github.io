@@ -11,7 +11,7 @@
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="ChroFlow — Daily Notes &amp; Timeline" />
   <meta property="og:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
-  <meta property="og:image"       content="images/logo.png" />
+  <meta property="og:image"       content="images/splash.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
@@ -20,6 +20,17 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E2WHQGQBE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2E2WHQGQBE');
+</script>
+
 <body>
 
   <!-- Skip to main content (accessibility) -->
@@ -28,11 +39,11 @@
   <!-- ══════════════════════════════════════════════════════
        TOP NAV  (hidden on hero, revealed on scroll)
        ══════════════════════════════════════════════════════ -->
-  <nav id="topnav" class="topnav topnav--hidden" aria-label="Main navigation">
+  <nav id="topnav" class="topnav" aria-label="Main navigation">
     <div class="topnav__inner">
 
       <a href="#hero" class="topnav__logo" aria-label="ChroFlow home">
-        <img src="images/logo.png" alt="ChroFlow" />
+        <img src="images/splash.png" alt="ChroFlow" />
       </a>
 
       <button id="nav-toggle" class="topnav__menu-btn" type="button"
@@ -46,13 +57,12 @@
       <div id="topnav-panel" class="topnav__panel">
         <ul class="topnav__links" role="list">
           <li><a href="#features" data-i18n="nav.features">Features</a></li>
-          <li><a href="#download" data-i18n="nav.download">Download</a></li>
           <li><a href="#pricing"  data-i18n="nav.pricing" >Pricing</a></li>
           <li><a href="#faq"      data-i18n="nav.faq"     >FAQ</a></li>
           <li><a href="#contact"  data-i18n="nav.contact" >Contact</a></li>
         </ul>
 
-        <button id="lang-switcher" class="topnav__lang" aria-label="Switch language">EN</button>
+        <a href="#download" class="topnav__cta" data-i18n="hero.cta">Start for Free</a>
       </div>
 
     </div>
@@ -66,8 +76,18 @@
          ══════════════════════════════════════════════════════ -->
     <section id="hero" class="hero" aria-label="Hero">
       <div class="hero__inner">
-        <img src="images/logo.png" alt="ChroFlow" class="hero__logo" />
-        <a href="#download" class="btn btn--primary" data-i18n="hero.cta">Download Free</a>
+        <h1 class="hero__title" data-i18n-title-lines="hero.title">
+          <span class="hero__title-line hero__title-line--light">Capture freely</span>
+          <span class="hero__title-line hero__title-line--strong">Look back clearly</span>
+        </h1>
+        <p class="hero__summary" data-i18n-html="hero.summary">Daily notes, task timers, and timeline-based review —  <br /> one seamless workflow, locally on your desktop.</p>
+        <div class="hero__actions">
+          <a href="#download" class="btn btn--primary" data-i18n="hero.cta">Start for Free</a>
+          <a href="#features" class="btn btn--secondary btn--with-icon">
+            <img src="images/swirl.png" alt="" aria-hidden="true" class="btn__icon" />
+            <span data-i18n="hero.cta.secondary">How ChroFlow works?</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -79,17 +99,17 @@
         <div class="pain__grid">
           <article class="pain-item reveal-on-scroll">
             <img src="images/hook-1.png" alt="Feeling busy but unable to see where the day went" class="pain-card__image" />
-            <p class="pain-card__text" data-i18n="pain.c1.text">Where did the day actually go?</p>
+            <p class="pain-card__text" data-i18n-html="pain.c1.text"></p>
           </article>
 
           <article class="pain-item reveal-on-scroll">
             <img src="images/hook-2.png" alt="Notes piling up without a clear way to find them later" class="pain-card__image" />
-            <p class="pain-card__text" data-i18n="pain.c2.text">Why can't you find it a month later?</p>
+            <p class="pain-card__text" data-i18n-html="pain.c2.text"></p>
           </article>
 
           <article class="pain-item reveal-on-scroll">
             <img src="images/hook-3.png" alt="Too many separate tools creating a fragmented workflow" class="pain-card__image" />
-            <p class="pain-card__text" data-i18n="pain.c3.text">Why does staying organized still feel exhausting?</p>
+            <p class="pain-card__text" data-i18n-html="pain.c3.text"></p>
           </article>
         </div>
       </div>
@@ -100,58 +120,244 @@
          ══════════════════════════════════════════════════════ -->
     <section id="solution" class="solution" aria-label="Solution">
       <div class="solution__inner">
-        <h2 class="solution__title reveal-on-scroll" data-i18n="solution.title">ChroFlow keeps your time and thoughts in one place.</h2>
+        <h2 class="solution__title reveal-on-scroll" data-i18n-html="solution.title"></h2>
         <p class="solution__tagline reveal-on-scroll" data-i18n="solution.tagline">Capture freely. Look back clearly.</p>
-        <p class="solution__founder reveal-on-scroll" data-i18n="solution.founder">
-          Built by a Harvard-trained researcher, for thinkers and builders whose best work doesn't happen in meetings.
-        </p>
+        <p class="solution__founder reveal-on-scroll" data-i18n-html="solution.founder" hidden></p>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         CORE FEATURES  (full-width sticky scroll)
+         CORE FEATURES  (full-width sticky scroll on desktop / landscape,
+         rotate prompt on mobile portrait)
          ══════════════════════════════════════════════════════ -->
     <section id="features" class="features" aria-label="Features">
 
-      <div class="features__header reveal-on-scroll">
+      <!-- <div class="features__header reveal-on-scroll">
         <h2 data-i18n="features.heading">How ChroFlow works</h2>
+      </div> -->
+
+      <!-- Mobile portrait: in-section viewing note -->
+      <div class="features__portrait-notice" aria-live="polite">
+        <p>
+          <svg class="features__portrait-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.2 3.1h6.3a1.3 1.3 0 0 1 1.3 1.3v15.2a1.3 1.3 0 0 1-1.3 1.3H4.2a1.3 1.3 0 0 1-1.3-1.3V4.4a1.3 1.3 0 0 1 1.3-1.3Z" />
+            <path d="M6.1 18.1h2.6" />
+            <path class="features__portrait-icon-dot" d="M7.35 5.35h.1" />
+            <path d="M14.1 12.5h5.7a1.3 1.3 0 0 1 1.3 1.3v5.8a1.3 1.3 0 0 1-1.3 1.3h-5.7" />
+            <path class="features__portrait-icon-dot" d="M18.1 16.7h.1" />
+            <path d="M13.4 4.8a5.8 5.8 0 0 1 5.7 5.7" />
+            <path d="M16.9 9.2 19.1 10.8l1.4-2.3" />
+          </svg>
+          <span data-i18n="features.rotate.notice">Rotate your device for an easier read</span>
+        </p>
       </div>
 
+      <!-- Sticky scroll with videos -->
       <div class="features__track">
 
-        <!-- Full-width sticky screenshot backdrop -->
-        <div class="features__sticky-bg" aria-hidden="true">
+        <div class="features__sticky-bg">
           <div class="features__shots">
+
             <div class="feat-shot active" id="shot-1">
-              <video src="video/web/01_overview.mp4?v=20260312b" poster="images/posters/feature-1.jpg?v=20260312b"
-                     muted playsinline webkit-playsinline preload="auto"
-                     data-video-scale="1"
-                     data-video-pos="center"
-                     data-video-fit="cover"></video>
+              <img src="images/How_works_1.png"
+                   class="feat-shot__image" alt="" aria-hidden="true" />
+              <div class="feat-shot__right-mask" aria-hidden="true"></div>
+              <div class="feat-shot__left-mask" aria-hidden="true"></div>
             </div>
+            <div class="feat-shot-title feat-shot-title--one" data-shot-card="shot-1" data-shot-x-var="--shot-1-main-title-x" data-shot-1-x-var="--shot-1-main-title-x" data-i18n="features.heading">How ChroFlow works</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--left" data-shot-card="shot-1" data-shot-x-var="--shot-1-left-title-x" data-shot-1-x-var="--shot-1-left-title-x" data-i18n="features.f1.focusTitle">Where your time goes</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--right" data-shot-card="shot-1" data-shot-x-var="--shot-1-right-title-x" data-shot-1-x-var="--shot-1-right-title-x" data-i18n="features.f1.focusThoughts">Where your thoughts live</div>
+            <div class="feat-shot-focus-tag feat-shot-focus-tag--calendar" data-shot-card="shot-1" data-shot-x-var="--shot-1-calendar-x" data-shot-1-x-var="--shot-1-calendar-x" data-i18n="features.f1.focusCalendar">Calendar</div>
+            <div class="feat-shot-focus-tag feat-shot-focus-tag--todo" data-shot-card="shot-1" data-shot-x-var="--shot-1-todo-x" data-shot-1-x-var="--shot-1-todo-x" data-i18n="features.f1.focusTodo">Todo</div>
+            <div class="feat-shot-focus-tag feat-shot-focus-tag--editor" data-shot-card="shot-1" data-shot-x-var="--shot-1-editor-x" data-shot-1-x-var="--shot-1-editor-x" data-i18n="features.f1.focusEditor">Daily editor</div>
+
+            <div class="feat-shot" id="shot-2">
+              <img src="images/How_works_2.png"
+                   class="feat-shot__image feat-shot__image--shot-2-category" alt="" aria-hidden="true" />
+              <img src="images/How_works_3.png"
+                   class="feat-shot__image feat-shot__image--shot-2-plan" alt="" aria-hidden="true" />
+              <img src="images/How_works_4.png"
+                   class="feat-shot__image feat-shot__image--shot-2-start" alt="" aria-hidden="true" />
+              <img src="images/How_works_5.png"
+                   class="feat-shot__image feat-shot__image--shot-2-tag-5" alt="" aria-hidden="true" />
+              <img src="images/How_works_6.png"
+                   class="feat-shot__image feat-shot__image--shot-2-tag-6" alt="" aria-hidden="true" />
+              <img src="images/How_works_7.png"
+                   class="feat-shot__image feat-shot__image--shot-2-tag-7" alt="" aria-hidden="true" />
+              <img src="images/How_works_8.png"
+                   class="feat-shot__image feat-shot__image--shot-2-tag-8" alt="" aria-hidden="true" />
+              <div class="feat-shot-click-cue" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+            </div>
+            <div class="feat-shot-title feat-shot-title--two" data-shot-card="shot-2" data-shot-x-var="--shot-2-title-x" data-i18n="features.f2.visualTitle">Every day is a new start</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-category" data-shot-card="shot-2" data-shot-x-var="--shot-2-focus-title-x" data-i18n="features.f2.focusTitle">Organise by category</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-plan" data-shot-card="shot-2" data-shot-x-var="--shot-2-focus-title-x" data-i18n="features.f2.focusPlan">Plan your sessions</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-start" data-shot-card="shot-2" data-shot-x-var="--shot-2-focus-title-x" data-i18n="features.f2.focusStart">Click to start a session</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-tag" data-shot-card="shot-2" data-shot-x-var="--shot-2-tag-title-x" data-i18n="features.f2.focusTag">Automatically tag notes as you work</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-switch-session" data-shot-card="shot-2" data-shot-x-var="--shot-2-switch-session-x" data-i18n="features.f2.focusSwitchSession">Switch sessions</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--two feat-shot-focus-title--two-keep-writing" data-shot-card="shot-2" data-shot-x-var="--shot-2-keep-writing-x" data-i18n="features.f2.focusKeepWriting">Keep writing</div>
+            <div class="feat-shot-focus-tag feat-shot-focus-tag--shot-2-categories" data-shot-card="shot-2" data-shot-x-var="--shot-2-categories-x" data-i18n="features.f2.focusCategories">different categories in one note</div>
+
+            <div class="feat-shot" id="shot-3">
+              <img src="images/How_works_10.png"
+                   class="feat-shot__image" alt="" aria-hidden="true" />
+              <img src="images/How_works_11.png"
+                   class="feat-shot__image feat-shot__image--shot-3-detail" alt="" aria-hidden="true" />
+              <img src="images/How_works_12.png"
+                   class="feat-shot__image feat-shot__image--shot-3-final" alt="" aria-hidden="true" />
+              <div class="feat-shot-click-cue feat-shot-click-cue--shot-3" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+              <div class="feat-shot-click-cue feat-shot-click-cue--shot-3-second" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+            </div>
+            <div class="feat-shot-title feat-shot-title--three" data-shot-card="shot-3" data-shot-x-var="--shot-3-title-x" data-i18n="features.f3.visualTitle">One Month Later...</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--three feat-shot-focus-title--three-glance" data-shot-card="shot-3" data-shot-x-var="--shot-3-glance-x" data-i18n="features.f3.focusGlance">all your time in a glance</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--three feat-shot-focus-title--three-insights" data-shot-card="shot-3" data-shot-x-var="--shot-3-insights-x" data-i18n="features.f3.focusInsights">More detailed insights...</div>
+
+            <div class="feat-shot" id="shot-4">
+              <img src="images/How_works_10.png"
+                   class="feat-shot__image" alt="" aria-hidden="true" />
+              <img src="images/How_works_12.png"
+                   class="feat-shot__image feat-shot__image--shot-4-retreat" alt="" aria-hidden="true" />
+              <img src="images/How_works_13.png"
+                   class="feat-shot__image feat-shot__image--shot-4-rise" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_1.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-1" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_2.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-2" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_3.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-3" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_4.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-4" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_5.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-5" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_6.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-6" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_7.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-7" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_8.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-8" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_9.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-9" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_10.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-10" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_11.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-11" alt="" aria-hidden="true" />
+              <img src="images/How_works_14_12.png"
+                   class="feat-shot__image feat-shot__image--shot-4-seq feat-shot__image--shot-4-seq-12" alt="" aria-hidden="true" />
+              <img src="images/How_works_15.png"
+                   class="feat-shot__image feat-shot__image--shot-4-focus" alt="" aria-hidden="true" />
+              <div class="feat-shot-click-cue feat-shot-click-cue--shot-4" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+              <div class="feat-shot-click-cue feat-shot-click-cue--shot-4-focus" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+            </div>
+            <div class="feat-shot-title feat-shot-title--four" data-shot-card="shot-4" data-shot-x-var="--shot-4-title-x" data-i18n="features.f4.visualTitle">All your thoughts in a line!</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--four-review" data-shot-card="shot-4" data-shot-x-var="--shot-4-review-x" data-i18n="features.f4.reviewTitle">Review notes from multiple days</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--four-focus" data-shot-card="shot-4" data-shot-x-var="--shot-4-focus-title-x" data-i18n="features.f4.focusTitle">Focus in one click!</div>
+            <div class="feat-shot-focus-tag feat-shot-focus-tag--shot-4-click" data-shot-card="shot-4" data-shot-x-var="--shot-4-click-label-x" data-i18n="features.f4.clickLabel">Click here!</div>
+
+            <div class="feat-shot" id="shot-5">
+              <img src="images/How_works_15.png"
+                   class="feat-shot__image feat-shot__image--shot-5-base" alt="" aria-hidden="true" />
+              <img src="images/How_works_16.png"
+                   class="feat-shot__image feat-shot__image--shot-5-step feat-shot__image--shot-5-step-16" alt="" aria-hidden="true" />
+              <img src="images/How_works_17.png"
+                   class="feat-shot__image feat-shot__image--shot-5-step feat-shot__image--shot-5-step-17" alt="" aria-hidden="true" />
+              <img src="images/How_works_18.png"
+                   class="feat-shot__image feat-shot__image--shot-5-step feat-shot__image--shot-5-step-18" alt="" aria-hidden="true" />
+              <img src="images/How_works_19.png"
+                   class="feat-shot__image feat-shot__image--shot-5-step feat-shot__image--shot-5-step-19" alt="" aria-hidden="true" />
+              <img src="images/How_works_20.png"
+                   class="feat-shot__image feat-shot__image--shot-5-step feat-shot__image--shot-5-step-20" alt="" aria-hidden="true" />
+              <div class="feat-shot-click-cue feat-shot-click-cue--shot-5" aria-hidden="true">
+                <svg class="feat-shot-click-cue__cursor" viewBox="0 0 32 32">
+                  <path d="M5 3 25 17.2 16.8 19.2 21.2 28.7 16.5 30.9 12 21.2 5.8 27.1 5 3Z" />
+                </svg>
+              </div>
+            </div>
+            <div class="feat-shot-title feat-shot-title--five" data-shot-card="shot-5" data-shot-x-var="--shot-5-title-x" data-i18n="features.f5.visualTitle">Work with context :-)</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--five-context" data-shot-card="shot-5" data-shot-x-var="--shot-5-context-title-x" data-i18n="features.f5.contextTitle">click to enter context mode</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--five-main-window" data-shot-card="shot-5" data-shot-x-var="--shot-5-main-window-x" data-i18n="features.f5.mainWindow">You still work in the main window</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--five-beyond" data-shot-card="shot-5" data-shot-x-var="--shot-5-beyond-x" data-i18n="features.f5.beyondChroLine">Not just inside ChroLine</div>
+            <div class="feat-shot-focus-title feat-shot-focus-title--five-chroline-context" data-shot-card="shot-5" data-shot-x-var="--shot-5-chroline-context-x" data-i18n="features.f5.chrolineContext">ChroLine provides context.</div>
+
+            <nav class="features__pager" aria-label="Feature walkthrough navigation">
+              <button class="features__pager-btn is-active" type="button" data-shot-target="shot-1" aria-label="Go to How ChroFlow works" aria-current="step"></button>
+              <button class="features__pager-btn" type="button" data-shot-target="shot-2" aria-label="Go to everyday is a new start"></button>
+              <button class="features__pager-btn" type="button" data-shot-target="shot-3" aria-label="Go to one month later"></button>
+              <button class="features__pager-btn" type="button" data-shot-target="shot-4" aria-label="Go to all your thoughts in a line"></button>
+              <button class="features__pager-btn" type="button" data-shot-target="shot-5" aria-label="Go to work with context"></button>
+            </nav>
+
+            <a href="#download" class="features__skip" data-i18n="features.skipDownload">Skip to download</a>
+
           </div>
         </div><!-- /features__sticky-bg -->
 
-        <!-- Scrolling steps overlay -->
         <div class="features__steps">
 
-          <!-- Step 1 — card on LEFT -->
           <div class="feat-step feat-step--right feat-step--no-card is-active" data-shot="shot-1">
             <div class="feat-card">
               <span class="feat-step__num">01</span>
               <h3 class="feat-step__title" data-i18n="features.f1.title">Daily Notes</h3>
-              <p class="feat-step__desc" data-i18n="features.f1.desc">Write freely, every day. Notes auto-organize by date, so your thoughts always have a home. Full Markdown support included.</p>
+              <p class="feat-step__desc" data-i18n="features.f1.desc"></p>
+            </div>
+          </div>
+
+          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-2" data-scroll-states="3">
+            <div class="feat-card">
+              <span class="feat-step__num">01</span>
+              <h3 class="feat-step__title" data-i18n="features.f3.title">Organize by Category</h3>
+              <p class="feat-step__desc" data-i18n="features.f3.desc"></p>
+            </div>
+          </div>
+
+          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-3" data-scroll-states="2">
+            <div class="feat-card">
+              <span class="feat-step__num">02</span>
+              <h3 class="feat-step__title" data-i18n="features.f2.title">How the Timer Works</h3>
+              <p class="feat-step__desc" data-i18n-html="features.f2.desc"></p>
+            </div>
+          </div>
+
+          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-4" data-scroll-states="3">
+            <div class="feat-card">
+              <span class="feat-step__num">03</span>
+              <h3 class="feat-step__title" data-i18n="features.f4.title">Back to the month view</h3>
+              <p class="feat-step__desc" data-i18n="features.f4.desc"></p>
+            </div>
+          </div>
+
+          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-5" data-scroll-states="2">
+            <div class="feat-card">
+              <span class="feat-step__num">04</span>
+              <h3 class="feat-step__title" data-i18n="features.f5.title">Work with context</h3>
+              <p class="feat-step__desc" data-i18n="features.f5.desc"></p>
             </div>
           </div>
 
         </div><!-- /features__steps -->
 
-        <!-- Extra scroll space so the last video stays pinned while the next
-             section slides up from below. Height matches the negative margin
-             on #download so the two cancel out (no net change to page length). -->
         <div class="features__end-spacer" aria-hidden="true"></div>
 
       </div><!-- /features__track -->
+
     </section>
 
     <!-- ══════════════════════════════════════════════════════
@@ -159,10 +365,159 @@
          ══════════════════════════════════════════════════════ -->
     <section id="download" class="download" aria-label="Download">
       <div class="download__inner">
-        <h2 class="download__title reveal-on-scroll">Coming Soon</h2>
-        <p class="download__sub reveal-on-scroll">We're working hard on bringing ChroFlow to you. Stay tuned!</p>
+
+        <h2 class="download__title reveal-on-scroll" data-i18n="download.title">Download ChroFlow</h2>
+        <p class="download__sub reveal-on-scroll" data-i18n="download.sub">Free to start. No account required.</p>
+
+        <div class="download__btns reveal-on-scroll">
+
+          <a href="https://www.dropbox.com/scl/fi/stq9lb9clcvxd0uypwc73/ChroFlow_1.0.1_aarch64.dmg?rlkey=l4s1b637h5baqr7zgvyi6yggc&st=qcio1v2j&dl=1" id="btn-mac" class="btn btn--download btn--mac" aria-label="Download ChroFlow for macOS Apple Silicon" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span class="btn-label" data-i18n="download.mac">Download for Mac</span>
+            <span class="btn-sub"   data-i18n="download.mac.sub">Apple Silicon · macOS 13+</span>
+          </a>
+
+          <a href="https://www.dropbox.com/scl/fi/dbc2ze71bu40mipxx6cde/ChroFlow_1.0.1_x64-setup.exe?rlkey=u9bqzy51ovzwjmkx2kh5br3jm&st=qacnmgp7&dl=1" id="btn-win" class="btn btn--download btn--win" aria-label="Download ChroFlow for Windows" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 12V6.75l6-1.32v6.48H3zM20.5 3v8.5H11V4.07L20.5 3zM3 13h6v6.43l-6-1.29V13zM11 13.5h9.5V21l-9.5-1.33V13.5z"/>
+            </svg>
+            <span class="btn-label" data-i18n="download.win">Download for Windows</span>
+            <span class="btn-sub"   data-i18n="download.win.sub">Windows 10+</span>
+          </a>
+
+        </div>
+
+        <div id="install-guide" class="install-guide" aria-live="polite">
+
+          <div id="guide-mac" class="install-guide__panel" hidden>
+            <h3 data-i18n="guide.mac.title">Opening ChroFlow on Mac</h3>
+            <p class="install-guide__note" data-i18n="guide.mac.note"></p>
+            <ol class="install-guide__steps">
+              <li data-i18n="guide.mac.s1"></li>
+              <li data-i18n="guide.mac.s2"></li>
+              <li><span class="install-guide__step-content" data-i18n-html="guide.mac.s3"></span></li>
+              <li><span class="install-guide__step-content" data-i18n-html="guide.mac.s4"></span></li>
+              <li data-i18n="guide.mac.s5"></li>
+              <li data-i18n="guide.mac.s6"></li>
+            </ol>
+          </div>
+
+          <div id="guide-win" class="install-guide__panel" hidden>
+            <h3 data-i18n="guide.win.title">Installing ChroFlow on Windows</h3>
+            <p class="install-guide__note" data-i18n="guide.win.note"></p>
+            <ol class="install-guide__steps">
+              <li data-i18n="guide.win.s1"></li>
+              <li data-i18n="guide.win.s2"></li>
+              <li data-i18n="guide.win.s3"></li>
+              <li data-i18n="guide.win.s4"></li>
+            </ol>
+            <p class="install-guide__tip" data-i18n="guide.win.tip"></p>
+          </div>
+
+        </div>
+
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PRICING
+         ══════════════════════════════════════════════════════ -->
+    <section id="pricing" class="pricing" aria-label="Pricing">
+      <div class="pricing__inner">
+
+        <div class="pricing__header reveal-on-scroll">
+          <h2 data-i18n="pricing.heading">Simple pricing</h2>
+          <p data-i18n="pricing.sub">Start free. Upgrade when you're ready.</p>
+        </div>
+
+        <div class="pricing__grid">
+
+          <div class="pricing-card reveal-on-scroll">
+            <div class="pricing-card__name" data-i18n="pricing.lite.name">Lite</div>
+            <div class="pricing-card__price">
+              <span class="amount" data-i18n="pricing.lite.price">Free</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li data-i18n="pricing.lite.f1">Daily notes</li>
+              <li data-i18n="pricing.lite.f2">7-day timeline</li>
+              <li data-i18n="pricing.lite.f6">1 pinned context</li>
+              <li data-i18n="pricing.lite.f3">Advanced search &amp; filters</li>
+              <li data-i18n="pricing.lite.f4">Local storage for data privacy</li>
+              <li data-i18n="pricing.lite.f5">Relay via the cloud you choose</li>
+            </ul>
+            <div class="pricing-card__cta">
+              <a href="#download" class="btn btn--secondary" data-i18n="pricing.lite.cta">Download Free</a>
+            </div>
+          </div>
+
+          <div class="pricing-card--pro-wrap reveal-on-scroll">
+            <div class="pricing-card pricing-card--pro">
+              <span class="pricing-card__badge" data-i18n="pricing.pro.badge">Most popular</span>
+              <div class="pricing-card__name" data-i18n="pricing.pro.name">Pro</div>
+              <div class="pricing-card__price-group">
+                <div class="pricing-card__onetime" data-i18n="pricing.pro.onetime">One-time purchase</div>
+                <div class="pricing-card__earlybird-row">
+                  <span class="pricing-card__original" data-i18n="pricing.pro.original">$79</span>
+                  <span class="pricing-card__earlybird-badge" data-i18n="pricing.pro.earlybird">Early Bird — 50% off</span>
+                </div>
+                <div class="pricing-card__price">
+                  <span class="amount" data-i18n="pricing.pro.price">$40</span>
+                </div>
+                <p class="pricing-card__forever" data-i18n="pricing.pro.price.sub">Yours forever · 2 devices</p>
+              </div>
+              <ul class="pricing-card__features" role="list">
+                <li data-i18n="pricing.pro.f1">Everything in Lite, plus:</li>
+                <li data-i18n="pricing.pro.f2">Unlimited number of categories</li>
+                <li data-i18n="pricing.pro.f3">Unlimited timeline history</li>
+                <li data-i18n="pricing.pro.f5">3 pinned contexts</li>
+                <li data-i18n="pricing.pro.f4">Export report without watermark</li>
+                <li class="pricing-placeholder"></li>
+              </ul>
+              <div class="pricing-card__cta">
+                <a href="https://chroflow.lemonsqueezy.com/checkout/buy/3111e1b2-ee5f-46ec-927c-3ad0803dff97" class="btn btn--primary" data-i18n="pricing.pro.cta">Get Pro</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pricing__pager" aria-label="Pricing plan navigation">
+          <button class="pricing__pager-btn is-active" type="button" data-pricing-target="0" aria-label="Show Lite plan" aria-current="step"></button>
+          <button class="pricing__pager-btn" type="button" data-pricing-target="1" aria-label="Show Pro plan"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         TESTIMONIALS
+         ══════════════════════════════════════════════════════ 
+    <section id="testimonials" class="testimonials" aria-label="Testimonials">
+      <div class="testimonials__inner">
+
+        <h2 class="testimonials__heading reveal-on-scroll" data-i18n="testimonials.heading">What people are saying</h2>
+
+        <div class="testimonials__grid">
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t1.quote"></blockquote>
+            <cite data-i18n="testimonials.t1.author">— Sarah K., researcher</cite>
+          </article>
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t2.quote"></blockquote>
+            <cite data-i18n="testimonials.t2.author">— Marcus T., writer</cite>
+          </article>
+
+          <article class="testimonial-card reveal-on-scroll">
+            <blockquote data-i18n="testimonials.t3.quote"></blockquote>
+            <cite data-i18n="testimonials.t3.author">— Yuna L., product designer</cite>
+          </article>
+
+        </div>
+      </div>
+    </section> -->
 
     <!-- ══════════════════════════════════════════════════════
          FAQ
@@ -174,17 +529,22 @@
 
           <div class="faq__item reveal-on-scroll">
             <h3 class="faq__q" data-i18n="faq.q1.q"></h3>
-            <p class="faq__a" data-i18n="faq.q1.a"></p>
+            <p class="faq__a" data-i18n-html="faq.q1.a"></p>
           </div>
 
           <div class="faq__item reveal-on-scroll">
             <h3 class="faq__q" data-i18n="faq.q2.q"></h3>
-            <p class="faq__a" data-i18n="faq.q2.a"></p>
+            <p class="faq__a" data-i18n-html="faq.q2.a"></p>
           </div>
 
           <div class="faq__item reveal-on-scroll">
             <h3 class="faq__q" data-i18n="faq.q3.q"></h3>
-            <p class="faq__a" data-i18n="faq.q3.a"></p>
+            <p class="faq__a" data-i18n-html="faq.q3.a"></p>
+          </div>
+
+          <div class="faq__item reveal-on-scroll">
+            <h3 class="faq__q" data-i18n="faq.q4.q"></h3>
+            <p class="faq__a" data-i18n-html="faq.q4.a"></p>
           </div>
 
         </div>
