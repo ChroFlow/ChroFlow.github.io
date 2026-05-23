@@ -1,0 +1,159 @@
+CHROFLOW REFUND POLICY
+
+Last updated: 2026-06-23
+
+This Refund Policy explains how refunds are handled for ChroFlow Pro purchases.
+
+ChroFlow is a desktop productivity software application. ChroFlow Lite is available before purchase and allows users to evaluate ChroFlow’s core workflow before buying ChroFlow Pro. Because ChroFlow Lite provides a meaningful trial before purchase, ChroFlow Pro purchases are generally final and non-refundable, except as described in this Refund Policy or where required by applicable law.
+
+Please read this Refund Policy carefully before purchasing ChroFlow Pro.
+
+1. Relationship to Other Terms
+
+This Refund Policy applies to ChroFlow Pro purchases.
+
+Your use of the ChroFlow software is governed by the ChroFlow End User License Agreement.
+
+Your use of ChroFlow-related purchase, checkout, license delivery, support, and related services is governed by the ChroFlow Terms of Purchase and Service.
+
+ChroFlow’s handling of personal data is described in the ChroFlow Privacy Policy.
+
+If there is any conflict between this Refund Policy and the Terms of Purchase and 
+Service regarding refunds, this Refund Policy will control, subject to applicable law and applicable platform rules.
+
+2. Trial Before Purchase
+
+ChroFlow Lite is available before purchasing ChroFlow Pro.
+
+Lite allows users to evaluate ChroFlow’s core workflow before purchase, including local note-taking, tasks, timers, timelines, categories, search, filters, local storage, and relay through the cloud storage provider chosen by the user.
+
+Lite may include usage limits, such as limits on categories, timeline history, pinned contexts, or exports.
+
+Because Lite provides a meaningful way to test ChroFlow before purchasing Pro, you are responsible for evaluating whether ChroFlow is suitable for your device, operating system, workflow, expectations, and use case before completing a purchase.
+
+3. General Refund Rule
+
+ChroFlow Pro is currently offered as a one-time purchase.
+
+Because ChroFlow Lite is available before purchase, ChroFlow Pro purchases are generally final and non-refundable after the License Key has been delivered or made available.
+
+We do not generally provide refunds for:
+
+change of mind;
+
+failure to try ChroFlow Lite before purchase;
+
+preference for a different workflow;
+
+lack of expected future features;
+
+lack of custom features;
+
+later discounts, promotions, coupons, or price changes;
+
+failure to read the product description, EULA, Terms of Purchase and Service, Privacy Policy, or this Refund Policy;
+
+incompatibility that could reasonably have been discovered by trying ChroFlow Lite before purchase;
+
+issues caused by your device, operating system, storage configuration, third-party cloud storage, third-party sync tools, or other third-party services;
+
+loss of local data, backup failure, sync failure, or file corruption not caused by ChroFlow purchase or license delivery;
+
+license sharing, unauthorized resale, tampering, fraud, chargeback abuse, or breach of the EULA or Terms of Purchase and Service.
+
+4. When Refunds May Be Considered
+
+Although ChroFlow Pro purchases are generally final, a refund may be considered in limited cases, such as:
+
+you were charged more than once for the same ChroFlow Pro license because of a duplicate purchase;
+
+you purchased ChroFlow Pro but did not receive a License Key or equivalent access, and the issue cannot be resolved;
+
+your valid License Key cannot be activated because of a license delivery or activation issue caused by ChroFlow, Lemon Squeezy, or another authorized platform, and the issue cannot be resolved;
+
+a refund is required by applicable law;
+
+a refund is required or approved by Lemon Squeezy or another authorized platform;
+we approve a refund at our discretion.
+
+Submitting a refund request does not guarantee that a refund will be granted.
+
+5. How to Request a Refund
+
+To request a refund, contact: chroflow.co@gmail.com
+
+Please include:
+
+the email address used for purchase;
+
+your order number or receipt, if available;
+
+your License Key, if requested;
+
+a brief explanation of the refund request;
+
+any relevant screenshots or error messages, if the request relates to purchase, delivery, or activation.
+
+Refund requests may also need to be handled through Lemon Squeezy or the authorized platform through which the purchase was made.
+
+We may ask for additional information to verify the purchase, understand the issue, or process the request.
+
+6. Lemon Squeezy and Platform Processing
+
+ChroFlow Pro may be sold through Lemon Squeezy or another authorized platform.
+Lemon Squeezy or another authorized platform may act as merchant of record, payment processor, checkout provider, tax handler, license delivery provider, license management provider, refund processor, or distribution platform.
+
+Refunds may be subject to the relevant platform’s terms, policies, procedures, fraud checks, payment processor rules, tax rules, currency conversion rules, and processing timelines.
+
+We do not control all platform decisions, including payment approval, fraud review, chargeback handling, tax treatment, currency conversion, refund processing, account restrictions, or platform availability.
+
+7. Effect of Refunds
+
+If a refund is issued, the related ChroFlow Pro License Key, Pro access, activation, local signed license file, or related entitlement may be disabled, revoked, or refused.
+
+After a refund, you must stop using any refunded Pro license or refunded Pro access.
+
+A refund does not give you the right to continue using Pro features.
+
+We may refuse future purchases, activations, or support where there is suspected refund abuse, chargeback abuse, fraud, license sharing, unauthorized resale, tampering, or breach of the EULA or Terms of Purchase and Service.
+
+8. Chargebacks and Payment Disputes
+
+If you have a problem with a purchase, license delivery, or activation, please contact us first at:
+chroflow.co@gmail.com
+
+If you initiate a chargeback or payment dispute, the related License Key, Pro access, activation, local signed license file, or related entitlement may be disabled, revoked, or refused while the dispute is reviewed.
+
+Chargeback abuse, fraudulent disputes, or repeated payment disputes may result in refusal of future purchases, activations, or support.
+
+Nothing in this section limits any payment dispute rights you may have under applicable law.
+
+9. Taxes, Fees, and Currency Conversion
+
+Refund amounts may be affected by taxes, VAT, GST, sales tax, currency conversion, bank fees, payment processor fees, card issuer fees, or platform rules.
+
+The refunded amount, timing, currency, and tax treatment may be determined by Lemon Squeezy, the relevant platform, your payment provider, your bank, your card issuer, or applicable law.
+
+We are not responsible for bank fees, card issuer fees, foreign transaction fees, exchange rate differences, or payment provider charges that are outside our control.
+
+10. Mandatory Consumer Rights
+
+Nothing in this Refund Policy limits or excludes any rights you may have under applicable consumer protection laws that cannot be excluded or limited by contract.
+
+If any part of this Refund Policy conflicts with a mandatory consumer right that applies to you, that mandatory right will prevail only to the extent required by law.
+
+11. Changes to This Refund Policy
+
+We may update this Refund Policy from time to time.
+
+The Refund Policy that applies to your purchase will generally be the Refund Policy available at the time of purchase, unless a later version is required by applicable law or is more favorable to you.
+
+If a material change is made, reasonable steps may be taken to notify users, such as through the website, checkout page, app, release notes, or other appropriate notice.
+
+12. Contact
+
+For refund questions, contact: chroflow.co@gmail.com
+
+Owner of ChroFlow intellectual property: Duo Chan
+
+Authorized distributor and store operator: Zuxin Sun

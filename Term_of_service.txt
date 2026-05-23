@@ -1,0 +1,328 @@
+CHROFLOW TERMS OF SERVICE
+
+Last updated: 2026-06-23
+
+Please read these Terms of Purchase and Service (“Terms”) carefully before purchasing, downloading, accessing, or using ChroFlow-related websites, downloads, checkout pages, license activation, support, or related services.
+
+These Terms govern the purchase, download, license delivery, checkout, support, and related service aspects of ChroFlow.
+
+Your use of the ChroFlow desktop software application is also governed by the ChroFlow End User License Agreement (“EULA”). The EULA governs your license to install and use the software itself. If there is a conflict between these Terms and the EULA regarding use of the ChroFlow software, the EULA will control.
+
+ChroFlow is proprietary software owned by Duo Chan. ChroFlow may be sold, distributed, listed, and supported by Zuxin Sun as an authorized distributor and store operator, and may be made available through Lemon Squeezy or other authorized platforms. This role structure is consistent with the ChroFlow EULA.
+
+By purchasing, downloading, accessing, activating, or using ChroFlow-related websites, checkout pages, license delivery, support, or related services, you agree to these Terms. If you do not agree to these Terms, you must not purchase, access, activate, or use ChroFlow-related services.
+
+1. Definitions
+
+“ChroFlow” means the ChroFlow desktop software application, including related downloads, documentation, license activation, website materials, and support.
+
+“Lite” means the free version or free feature tier of ChroFlow.
+
+“Pro” means the paid feature tier of ChroFlow.
+
+“Owner” means Duo Chan, the owner of the ChroFlow software, source code, copyright, product design, brand, documentation, and related intellectual property.
+
+“Distributor” means Zuxin Sun, who is authorized by the Owner to sell, distribute, list, market, operate the store for, and support ChroFlow.
+
+“Platform” means Lemon Squeezy or any other authorized payment, checkout, licensing, or distribution platform used to make ChroFlow available.
+
+“License Key” means any license code, activation credential, account entitlement, receipt, or other proof of purchase or authorization used to unlock paid features of ChroFlow.
+
+“User”, “you”, or “your” means the individual or entity purchasing, downloading, activating, accessing, or using ChroFlow or related services.
+
+2. Relationship Between These Terms, the EULA, Privacy Policy, and Refund Policy
+
+These Terms govern purchase, checkout, license delivery, support, website access, and related service matters.
+
+The ChroFlow EULA governs your license to install and use the ChroFlow desktop software.
+
+The ChroFlow Privacy Policy explains how personal information and ChroFlow-related data are handled.
+
+The ChroFlow Refund Policy governs refund eligibility and refund handling.
+
+If there is a conflict between these Terms and the EULA regarding software use, the EULA will control.
+
+If there is a conflict between these Terms and the Privacy Policy regarding personal data, the Privacy Policy will control.
+
+If there is a conflict between these Terms and the Refund Policy regarding refunds, the Refund Policy will control, subject to applicable law and platform rules.
+
+3. ChroFlow Lite
+
+ChroFlow Lite may be downloaded and used without payment, subject to the EULA and these Terms.
+
+Lite is intended to allow users to try ChroFlow before purchasing Pro. Lite provides access to ChroFlow’s core workflow with usage limits.
+
+Lite may include:
+
+4 categories;
+20-day timeline;
+1 pinned context;
+advanced search and filters;
+local storage for data privacy;
+relay through the cloud storage provider chosen by the user.
+
+Lite may be changed, limited, modified, or discontinued from time to time, subject to applicable law.
+
+Use of Lite does not give you ownership of ChroFlow or any ChroFlow intellectual property.
+
+4. ChroFlow Pro
+
+ChroFlow Pro is a paid feature tier of ChroFlow.
+
+Pro is currently offered as a one-time purchase.
+
+Pro may include:
+
+everything included in Lite;
+unlimited number of categories;
+unlimited timeline history;
+3 pinned contexts;
+export of data without Lite constraints;
+lifetime access on 2 devices, subject to the EULA, these Terms, license activation, platform rules, and applicable law.
+
+“Lifetime access” means access to the Pro features covered by the purchased license for the lifetime of the ChroFlow product as made available under that license. It does not mean that any specific feature, operating system support, platform support, update, cloud service, third-party service, support channel, or version will remain available permanently.
+
+A Pro purchase gives you a license to use Pro features according to the EULA and these Terms. It does not transfer ownership of ChroFlow, the software, source code, brand, design, workflow, documentation, or related intellectual property to you.
+
+5. Pricing and Promotions
+
+Current pricing may be shown on the ChroFlow website, checkout page, Lemon Squeezy page, or another authorized platform.
+
+ChroFlow Pro may be offered at a regular price, promotional price, early bird price, discount, coupon price, or other temporary pricing arrangement.
+
+For example, ChroFlow Pro may be listed at a regular price of USD $79, with an early bird discount of 50% resulting in a promotional price of USD $40.
+
+Prices, promotions, discounts, coupons, availability, and currency display may change at any time before purchase.
+
+Once you complete a purchase, the purchase price is the price shown and accepted at checkout, subject to applicable taxes, fees, currency conversion, and platform rules.
+We are not required to provide retroactive discounts, credits, or refunds because of later price reductions, promotions, coupons, or changes in pricing.
+
+6. Purchase and Delivery
+
+ChroFlow Lite may be downloaded from the official ChroFlow website or another authorized source.
+
+ChroFlow Pro is activated through a License Key.
+
+After purchasing ChroFlow Pro, you may receive a License Key through Lemon Squeezy or another authorized platform. You may need to enter that License Key inside ChroFlow Lite to unlock Pro features.
+
+A Pro purchase does not necessarily provide a separate Pro installer. The Pro features may be unlocked inside the Lite application through license activation.
+
+You are responsible for providing accurate checkout information, maintaining access to the email address used for purchase, and keeping your License Key secure.
+
+We are not responsible for loss of access caused by incorrect email addresses, lost receipts, lost License Keys, unauthorized sharing, failure to save purchase information, or inability to access your own email or platform account.
+
+7. License Activation and Device Limit
+
+ChroFlow Pro requires license activation.
+
+Each ChroFlow Pro License Key currently allows activation on up to 2 devices, subject to Lemon Squeezy license management, authorized platform rules, technical activation limits, anti-abuse rules, and the EULA.
+
+License activation may require an internet connection.
+
+Device activation, deactivation, license status, activation count, and related license management may be handled through Lemon Squeezy or another authorized licensing system.
+License Keys must not be shared, sold, transferred, published, rented, leased, sublicensed, or used to provide unauthorized access to Pro features.
+
+We may disable, revoke, or refuse activation where there is suspected fraud, refund abuse, chargeback abuse, license sharing, tampering, unauthorized resale, platform abuse, or breach of the EULA or these Terms. The EULA contains similar license key and activation restrictions.
+
+8. Lemon Squeezy and Other Authorized Platforms
+
+ChroFlow may be sold, distributed, licensed, or delivered through Lemon Squeezy or another authorized platform.
+
+Lemon Squeezy or another authorized platform may act as merchant of record, payment processor, checkout provider, tax handler, invoice provider, license delivery provider, license management provider, refund processor, or distribution platform.
+
+Your purchase, payment, refund, chargeback, tax, checkout, license delivery, and license management interactions may be subject to the applicable terms, policies, and procedures of the relevant platform.
+
+We do not control all platform decisions, including payment approval, tax calculation, currency conversion, fraud review, refund processing, account restrictions, chargeback handling, or platform availability.
+
+9. Taxes, Fees, and Currency
+
+Prices may not include applicable taxes, VAT, GST, sales tax, duties, payment fees, currency conversion fees, or other charges unless stated at checkout.
+
+The checkout platform may calculate, collect, remit, or display applicable taxes and fees.
+
+You are responsible for any taxes, fees, charges, or reporting obligations that apply to your purchase, except where the platform or applicable law requires otherwise.
+
+Currency conversion, bank fees, card fees, and foreign transaction charges may be determined by your payment provider, bank, card issuer, or checkout platform.
+
+10. Trial, Lite Limits, and Purchase Decision
+
+ChroFlow Lite is provided so that users can try ChroFlow before purchasing Pro.
+Lite provides access to ChroFlow’s core workflow with limits such as category limits, timeline limits, pinned context limits, and export constraints.
+
+Because Lite allows users to evaluate ChroFlow before purchasing Pro, you are responsible for deciding whether ChroFlow is suitable for your device, workflow, expectations, and use case before completing a purchase.
+
+You should test ChroFlow Lite before purchasing Pro.
+
+11. Refunds
+
+Refunds for ChroFlow Pro are governed by the ChroFlow Refund Policy, applicable platform rules, and applicable law.
+
+Because ChroFlow Lite is available before purchase and allows users to evaluate the product, the Refund Policy may limit refund availability after purchase, except where required by applicable law or approved through the applicable platform process.
+
+If a refund is issued, the related License Key, Pro access, activation, or local signed license file may be disabled, revoked, or refused.
+
+Nothing in these Terms limits or excludes any mandatory consumer rights that cannot be excluded or limited by contract.
+
+12. Support
+
+Support may be provided through: chroflow.co@gmail.com
+
+Support is provided on a reasonable-efforts basis only.
+
+We do not guarantee any specific response time, resolution time, availability, fix, workaround, feature change, compatibility update, or support outcome.
+
+We do not provide custom feature development, custom workflows, custom integrations, professional consulting, legal advice, financial advice, tax advice, medical advice, psychological advice, employment advice, compliance advice, or other professional services.
+
+We may decline, limit, or stop support where a request is abusive, unlawful, excessive, unrelated to ChroFlow, involves unauthorized use, involves tampering or license abuse, or falls outside the intended scope of ChroFlow.
+
+13. Updates, Compatibility, and Changes
+
+ChroFlow may be updated, modified, improved, limited, or discontinued from time to time.
+
+We may provide maintenance updates at our discretion, but we do not guarantee future updates, new features, major upgrades, compatibility with all future operating systems, continued support for any specific platform, or permanent availability of any specific feature.
+
+You are responsible for ensuring that your device, operating system, storage configuration, permissions, and workflow are compatible with ChroFlow before purchase.
+
+A ChroFlow Pro license does not guarantee that ChroFlow will operate forever on future versions of macOS, Windows, or any other operating system.
+
+If future versions, updates, or upgrades are made available, they may be free, paid, limited, discontinued, or subject to additional terms, at our discretion and subject to applicable law.
+
+14. Local Data and User Responsibility
+
+ChroFlow is designed primarily as a desktop software application. ChroFlow data is stored locally on your device by default, unless you choose to use external storage, backup, sync, relay, cloud storage, or third-party services.
+
+You are responsible for maintaining your own backups.
+
+You are responsible for the accuracy, legality, backup, export, preservation, security, and deletion of your own data.
+
+We are not responsible for loss, corruption, deletion, unavailability, sync failure, backup failure, export failure, or failure to recover your data, except where liability cannot be excluded under applicable law.
+
+15. User-Selected Cloud Storage, Relay, Backup, or Sync
+
+ChroFlow may allow or support workflows where you store, back up, sync, relay, or transfer ChroFlow data using your own cloud storage provider or file storage system.
+
+Any such cloud storage, relay, backup, or sync is chosen and controlled by you.
+
+We do not provide a ChroFlow cloud storage server for your app content.
+
+We do not control Dropbox, iCloud, Google Drive, OneDrive, external drives, file-sharing tools, cloud storage providers, operating system sync tools, or other third-party storage services.
+
+Third-party services are subject to their own terms and privacy policies.
+
+We are not responsible for third-party service outages, sync errors, data loss, deletion, corruption, account restrictions, policy changes, security incidents, or other third-party conduct.
+
+16. Acceptable Use
+
+You must not use ChroFlow-related websites, downloads, checkout pages, license activation, support, or related services in any unlawful, harmful, abusive, fraudulent, infringing, misleading, or unauthorized manner.
+
+You must not:
+
+attempt to bypass payment, license activation, device limits, or Pro restrictions;
+share, publish, sell, transfer, or misuse License Keys;
+
+use stolen payment methods, fraudulent payment information, or unauthorized accounts;
+submit false refund, chargeback, support, or license claims;
+
+interfere with the website, checkout, license activation, verification server, or support systems;
+
+attempt to gain unauthorized access to ChroFlow systems or platform systems;
+
+misrepresent your relationship with ChroFlow, the Owner, the Distributor, or any authorized platform;
+
+use ChroFlow-related services to violate law or third-party rights.
+
+Additional software use restrictions are set out in the EULA.
+
+17. Intellectual Property
+
+ChroFlow is owned by Duo Chan.
+
+All rights, title, and interest in and to ChroFlow, including the software, source code, object code, product design, user interface, workflow design, name, logo, branding, website, documentation, text, graphics, and related intellectual property, remain owned by Duo Chan or the relevant rights holders.
+
+Purchase of ChroFlow gives you a license to use the software according to the EULA and these Terms. It does not give you ownership of ChroFlow or any ChroFlow intellectual property.
+
+You must not remove, alter, obscure, or misrepresent any copyright, trademark, attribution, or proprietary notice included with ChroFlow.
+
+18. Privacy
+
+ChroFlow’s handling of personal data is described in the ChroFlow Privacy Policy.
+
+The Privacy Policy should be reviewed together with these Terms and the EULA.
+
+If there is any inconsistency between these Terms and the Privacy Policy regarding personal data, the Privacy Policy will control.
+
+19. Third-Party Services and Components
+
+ChroFlow may interact with, rely on, or be distributed through third-party services, platforms, libraries, software components, operating systems, storage providers, cloud services, payment providers, licensing providers, or other third-party systems.
+
+Third-party services and components are subject to their own terms, licenses, and privacy policies.
+
+We are not responsible for third-party services, outages, policy changes, data loss, platform decisions, payment failures, account restrictions, license system issues, sync failures, or third-party conduct.
+
+Open-source or third-party software components included with ChroFlow may be listed in a separate Third-Party Notices file.
+
+20. Disclaimers
+
+To the maximum extent permitted by applicable law, ChroFlow-related websites, downloads, checkout pages, license activation, support, and related services are provided “as is” and “as available”.
+
+We do not guarantee that ChroFlow or related services will meet your requirements, operate without interruption, be error-free, be secure, preserve your data, remain compatible with your system, or be suitable for any particular workflow or purpose.
+
+We do not guarantee the availability, accuracy, uninterrupted operation, or continued support of any website, checkout page, license activation system, platform integration, support channel, feature, version, operating system, or third-party service.
+
+21. Limitation of Liability
+
+To the maximum extent permitted by applicable law, the Owner, Distributor, and authorized platforms will not be liable for any indirect, incidental, special, consequential, exemplary, punitive, or similar damages, including loss of profits, loss of revenue, loss of business, loss of goodwill, loss of data, data corruption, business interruption, loss of productivity, loss of opportunity, or cost of substitute software or services, arising out of or related to ChroFlow, these Terms, purchase, checkout, license activation, support, or related services.
+
+To the maximum extent permitted by applicable law, the total aggregate liability of the Owner and Distributor arising out of or related to ChroFlow, these Terms, purchase, checkout, license activation, support, or related services will not exceed the amount actually paid by you for ChroFlow during the twelve months before the event giving rise to the claim.
+
+If you used ChroFlow without payment, the total aggregate liability will not exceed GBP £10.
+
+Nothing in these Terms excludes or limits liability where such exclusion or limitation is not permitted by applicable law.
+
+22. Indemnity
+
+To the extent permitted by applicable law, you agree to indemnify and hold harmless the Owner and Distributor from and against claims, losses, liabilities, damages, costs, and expenses arising from your breach of these Terms, breach of the EULA, misuse of ChroFlow, violation of law, infringement of third-party rights, unauthorized sharing of License Keys, payment fraud, chargeback abuse, or use of ChroFlow-related services in a manner not permitted by these Terms.
+
+23. Suspension or Termination
+
+We may suspend, disable, revoke, or refuse access to Pro features, license activation, support, or related services where there is suspected fraud, refund abuse, chargeback abuse, license sharing, tampering, unauthorized resale, platform abuse, unlawful conduct, or breach of these Terms or the EULA.
+
+Your license to use the ChroFlow software may also terminate according to the EULA.
+If your access is terminated, you must stop using any unauthorized access to paid features and stop using ChroFlow-related services in any unauthorized manner.
+
+Sections that by their nature should continue will survive termination, including ownership, payment obligations, restrictions, disclaimers, limitation of liability, indemnity, consumer rights, and governing law.
+
+24. Consumer Rights
+
+Nothing in these Terms limits or excludes any rights you may have under applicable consumer protection laws that cannot be excluded or limited by contract.
+
+If any term of these Terms conflicts with a mandatory consumer right that applies to you, that mandatory right will prevail only to the extent required by law.
+
+25. Export and Legal Compliance
+
+You are responsible for complying with all laws and regulations that apply to your purchase, download, installation, activation, access, export, re-export, and use of ChroFlow.
+
+You must not purchase, access, activate, export, re-export, or use ChroFlow where doing so would violate applicable law.
+
+26. Changes to These Terms
+
+We may update these Terms from time to time.
+
+If a material change is made, reasonable steps may be taken to notify users, such as through the website, checkout page, app, release notes, or other appropriate notice.
+The updated Terms will be effective when posted or otherwise made available, unless a later effective date is stated.
+
+Your continued use of ChroFlow-related services after updated Terms become effective means you accept the updated Terms.
+
+27. Governing Law
+
+These Terms are governed by the laws of England and Wales, except for conflict of law rules.
+
+If you are a business user, the courts of England and Wales will have exclusive jurisdiction over disputes arising out of or related to these Terms.
+
+If you are a consumer, the courts of England and Wales will have non-exclusive jurisdiction, and nothing in these Terms limits any mandatory consumer rights or jurisdiction rights that apply to you under the laws of your country or place of residence.
+
+28. Contact
+
+For questions about ChroFlow, purchases, license activation, support, or these Terms, contact: chroflow.co@gmail.com
+Owner of ChroFlow intellectual property: Duo Chan
+Authorized distributor and store operator: Zuxin Sun

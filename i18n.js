@@ -152,7 +152,7 @@ const I18N = {
     /* ── Contact ────────────────────────────────────────────── */
     "contact.heading":  "Get in touch",
     "contact.lead":     "Questions, feedback, or just want to say hello?",
-    "contact.email":    "hello@chroflow.app",
+    "contact.email":    "chroflow.co@gmail.com",
 
     /* ── Footer ─────────────────────────────────────────────── */
     "footer.copy":    "© 2026 ChroFlow. All rights reserved.",
@@ -308,7 +308,7 @@ const I18N = {
     /* ── Contact ────────────────────────────────────────────── */
     "contact.heading":  "联系我们",
     "contact.lead":     "有问题、反馈，或只是想打个招呼？",
-    "contact.email":    "hello@chroflow.app",
+    "contact.email":    "chroflow.co@gmail.com",
 
     /* ── Footer ─────────────────────────────────────────────── */
     "footer.copy":    "© 2026 ChroFlow. 保留所有权利。",

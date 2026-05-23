@@ -1,0 +1,313 @@
+CHROFLOW PRIVACY POLICY
+
+Last updated: 2026-06-23
+
+This Privacy Policy explains how information is handled in connection with ChroFlow, a desktop productivity software application.
+
+ChroFlow is proprietary software owned by Duo Chan. ChroFlow may be sold, distributed, listed, and supported by Zuxin Sun as an authorized distributor and store operator, and may be made available through Lemon Squeezy or other authorized platforms.
+
+We designed ChroFlow to be local-first. ChroFlow does not collect, upload, read, analyze, or sell your notes, tasks, timers, timelines, categories, sessions, productivity records, or other content you create in the app.
+Please read this Privacy Policy carefully. If you do not agree with this Privacy Policy, you should not use ChroFlow.
+
+1. Who We Are
+
+For the purposes of this Privacy Policy:
+
+“ChroFlow” means the ChroFlow desktop software application, including related downloads, license activation, support, website materials, and documentation.
+
+“Owner” means Duo Chan, the owner of ChroFlow software, source code, product design, brand, documentation, and related intellectual property.
+
+“Distributor” means Zuxin Sun, who is authorized to sell, distribute, list, market, operate the store for, and support ChroFlow.
+
+“Platform” means Lemon Squeezy or any other authorized payment, checkout, licensing, or distribution platform used to make ChroFlow available.
+
+For privacy questions, contact: chroflow.co@gmail.com
+
+2. Summary
+
+ChroFlow is designed to keep your app data on your own device by default.
+
+In summary:
+
+ChroFlow stores your notes, tasks, timers, categories, sessions, timelines, exports, and productivity records locally on your device.
+
+We do not operate a ChroFlow account system for the app.
+
+We do not provide a ChroFlow cloud storage server for your app content.
+
+We do not collect, upload, read, analyze, or sell your ChroFlow content.
+
+We do not collect analytics about how you use the app.
+
+We do not currently use built-in crash reporting.
+
+We do not currently perform automatic update checks.
+
+If you purchase ChroFlow Pro, Lemon Squeezy and related license systems may process purchase, payment, tax, invoice, license key, activation, device management, and refund information.
+
+If you contact us for support, we may receive and retain your email address, message content, attachments, and support-related information.
+
+If you choose to store, back up, sync, relay, or transfer ChroFlow data using your own cloud storage provider, such as Dropbox or another third-party service, that service handles your data according to its own terms and privacy policy.
+
+3. Information Stored Locally by ChroFlow
+
+ChroFlow may store the following information locally on your device:
+
+notes;
+tasks;
+timers;
+categories;
+sessions;
+timelines;
+daily records;
+monthly records;
+exports;
+settings;
+local license status;
+local signed license files;
+other content or configuration data you create or save in ChroFlow.
+
+This information is stored on your device by default. We do not collect, upload, read, analyze, or sell this information.
+You are responsible for managing, backing up, exporting, deleting, and protecting the ChroFlow data stored on your own device. ChroFlow’s EULA also states that users are responsible for the accuracy, legality, backup, export, and preservation of their own data.
+
+4. Information We Do Not Collect
+
+ChroFlow does not collect or upload your app content.
+
+This means we do not collect, upload, read, analyze, or sell:
+
+your notes;
+your tasks;
+your timer records;
+your timelines;
+your categories;
+your sessions;
+your daily or monthly work records;
+your productivity history;
+your local ChroFlow database;
+your exported ChroFlow files;
+your behavior inside the app;
+your feature usage history;
+your working patterns;
+your personal productivity analytics.
+
+ChroFlow does not include built-in analytics. We do not track how often you open the app, which features you click, how long you work, what you write, or how you organize your time.
+
+ChroFlow does not include built-in crash reporting. If the app crashes, it does not automatically send crash reports, logs, notes, tasks, timers, or other content to us.
+
+ChroFlow does not currently perform automatic update checks.
+
+5. Pro Activation and License Verification
+
+ChroFlow Pro requires license activation.
+
+When you enter a Lemon Squeezy license key in ChroFlow, the app may send the license key and limited device-specific activation information to our verification server. This is necessary to verify the license and create a local signed license file for your device.
+
+Our verification server is used only as a relay for the license verification process. It forwards the relevant activation request to Lemon Squeezy or another authorized licensing service and returns the activation result or local signed license file to your device.
+
+Our verification server does not collect, store, read, or analyze your notes, tasks, timers, timelines, categories, sessions, productivity records, or other ChroFlow content.
+
+Our verification server does not retain your device-specific activation information after the verification process is completed.
+Depending on how license activation is configured, Lemon Squeezy or another authorized licensing provider may process purchase, payment, tax, invoice, license key, activation status, activation count, activation instance, device management, refund, and related account information according to its own terms and privacy policy.
+
+6. Purchases Through Lemon Squeezy or Other Platforms
+
+ChroFlow may be sold through Lemon Squeezy or another authorized platform. Lemon Squeezy or another platform may act as merchant of record, payment processor, checkout provider, tax handler, license delivery provider, refund processor, or distribution platform.
+
+When you purchase ChroFlow, the relevant platform may collect and process information such as:
+
+name;
+email address;
+billing information;
+payment information;
+tax information;
+country or region;
+order details;
+invoice details;
+license key information;
+refund information;
+chargeback information;
+account information on that platform;
+device or activation management information, where applicable.
+
+We may receive limited purchase, license, support, or transaction information from the platform where necessary to provide ChroFlow, verify your license, respond to support requests, process refunds, prevent fraud, manage license access, or comply with legal obligations.
+
+We do not receive your full payment card details from Lemon Squeezy or other payment processors.
+Your use of Lemon Squeezy or another authorized platform is also subject to that platform’s own terms and privacy policy.
+
+7. User-Selected Cloud Storage, Backup, Sync, or Relay
+
+ChroFlow does not provide its own cloud storage server for your app content.
+
+You may choose to store, back up, sync, relay, or transfer ChroFlow files using your own third-party services, such as Dropbox, iCloud, Google Drive, OneDrive, external drives, file-sharing tools, or other storage providers.
+
+If you choose to use a third-party cloud storage or file transfer service, your data is handled by that third-party service according to its own terms and privacy policy.
+
+We do not control third-party storage providers. We are not responsible for their security, availability, data handling, outages, policy changes, sync errors, deletion, corruption, or loss of data.
+
+8. Support Communications
+
+If you contact us for support, licensing help, refunds, troubleshooting, feedback, bug reports, or other questions, we may receive and retain:
+
+your email address;
+your name, if provided;
+your message content;
+attachments you choose to send;
+screenshots you choose to send;
+license or order information you provide;
+technical information you voluntarily provide;
+records of our communication with you.
+
+We use support communications to respond to your request, provide support, investigate issues, manage licenses, process purchase or refund questions, improve ChroFlow, maintain business records, and protect our rights.
+
+Please do not send us sensitive personal information or private ChroFlow content unless it is necessary for your support request and you are comfortable sharing it.
+
+We do not sell support communications to third parties.
+
+9. How We Use Information
+
+We may use the limited information we receive or process for the following purposes:
+
+to provide ChroFlow;
+to enable Pro license activation;
+to verify license keys;
+to generate or validate local signed license files;
+to prevent fraud, license abuse, unauthorized resale, chargeback abuse, or license sharing;
+to process purchases, refunds, taxes, invoices, and order administration through authorized platforms;
+to respond to support requests;
+to troubleshoot issues you report;
+to maintain legal, tax, accounting, and business records;
+to enforce the ChroFlow EULA, Terms of Service, Terms of Purchase, Refund Policy, or other legal terms;
+to comply with applicable law;
+to protect ChroFlow, users, the Owner, the Distributor, and authorized platforms.
+
+We do not use your ChroFlow notes, tasks, timers, timelines, categories, sessions, or productivity records for analytics, advertising, profiling, AI training, resale, or behavioral analysis.
+
+10. When Information Is Shared
+
+We may share or make information available only where reasonably necessary for the purposes described in this Privacy Policy.
+
+This may include sharing information with:
+
+Lemon Squeezy or another authorized checkout, payment, tax, license, refund, or distribution platform;
+email providers used to receive and respond to support messages;
+hosting or infrastructure providers used for the license verification relay server;
+professional advisers, such as accountants, lawyers, or tax advisers, where necessary;
+law enforcement, courts, regulators, or government authorities where required by law;
+successors or relevant parties in connection with a business transfer, restructuring, sale, merger, or similar transaction.
+
+We do not sell your personal information.
+
+We do not sell your ChroFlow content.
+
+We do not share your notes, tasks, timers, timelines, categories, sessions, or productivity records with advertisers, analytics providers, or data brokers.
+
+11. Data Retention
+
+ChroFlow content stored locally on your device remains under your control. You may delete local ChroFlow data from your device, subject to how the app and your operating system store files.
+
+Our license verification relay server does not retain your device-specific activation information after the verification process is completed.
+
+Purchase, payment, tax, invoice, license, refund, and platform account records may be retained by Lemon Squeezy or another authorized platform according to its own retention policies and legal obligations.
+
+We may retain support emails and related communications for as long as reasonably necessary to respond to your request, provide support, maintain business records, resolve disputes, enforce legal terms, and comply with legal obligations.
+
+We may retain limited records where necessary for accounting, tax, legal, security, fraud prevention, or dispute resolution purposes.
+
+12. Security
+
+We use reasonable technical and organizational measures to protect information that we process.
+
+However, no software, device, network, storage system, email system, payment platform, or internet transmission is completely secure.
+
+Because ChroFlow is local-first, you are responsible for protecting your own device, operating system account, local files, backups, exports, passwords, cloud storage accounts, and third-party sync tools.
+
+You should keep your device secure, maintain your own backups, and use trusted storage providers if you choose to sync or back up your ChroFlow data.
+
+13. Your Choices
+
+You can choose not to purchase ChroFlow Pro and use only available free features, subject to the applicable license terms.
+
+You can choose not to activate ChroFlow Pro. Without activation, Pro features may not be available.
+
+You can choose whether to use your own third-party cloud storage, backup, sync, relay, or transfer tools.
+
+You can choose what information to include when contacting us for support.
+
+You can delete local ChroFlow data from your own device, subject to how the app and your operating system store files.
+
+You can contact us to ask about personal information we may hold about you through support communications or purchase/license 
+records available to us.
+
+14. Your Privacy Rights
+
+Depending on where you live, you may have legal rights regarding your personal information, such as the right to:
+
+request access to personal information;
+request correction of inaccurate personal information;
+request deletion of personal information;
+object to certain processing;
+request restriction of processing;
+request a copy of personal information;
+withdraw consent where processing is based on consent;
+complain to a data protection authority.
+
+To exercise privacy rights in relation to information we control, contact:
+chroflow.co@gmail.com
+
+For information processed by Lemon Squeezy or another authorized platform, you may need to contact that platform directly.
+
+We may need to verify your identity before responding to a privacy request.
+
+Some information may need to be retained where required or permitted by law, including for tax, accounting, legal, fraud prevention, chargeback, dispute resolution, or license enforcement purposes.
+
+15. International Processing
+
+ChroFlow may be purchased, downloaded, activated, or supported from different countries.
+
+Lemon Squeezy, email providers, hosting providers, and other service providers may process information in countries other than your country of residence.
+
+Where required by applicable law, appropriate safeguards may apply to international transfers of personal information.
+
+16. Children’s Privacy
+
+ChroFlow is not directed to children.
+
+We do not knowingly collect personal information from children under the age required by applicable law.
+
+If you believe a child has provided personal information to us, contact us at:
+chroflow.co@gmail.com
+
+17. Third-Party Services
+
+ChroFlow may interact with, rely on, or be distributed through third-party services, platforms, libraries, software components, operating systems, storage providers, cloud services, payment providers, licensing providers, or update mechanisms. The ChroFlow EULA also states that third-party services and components are subject to their own terms, licenses, and privacy policies.
+
+Third-party services may include, where applicable:
+
+Lemon Squeezy;
+payment processors;
+tax and invoicing providers;
+email providers;
+hosting or infrastructure providers;
+user-selected cloud storage providers such as Dropbox, iCloud, Google Drive, OneDrive, or similar services;
+operating system providers;
+software libraries or frameworks used by ChroFlow.
+
+We are not responsible for the privacy practices, security, availability, terms, policy changes, data handling, outages, sync errors, or conduct of third-party services.
+
+18. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time.
+
+If we make material changes, reasonable steps may be taken to notify users, such as through the website, app, checkout page, release notes, or other appropriate notice.
+The updated Privacy Policy will be effective when posted or otherwise made available, unless a later effective date is stated.
+
+Your continued use of ChroFlow after an updated Privacy Policy becomes effective means you acknowledge the updated Privacy Policy.
+
+19. Contact
+
+For questions about ChroFlow or this Privacy Policy, contact: chroflow.co@gmail.com
+
+Owner of ChroFlow intellectual property: Duo Chan
+
+Authorized distributor and store operator: Zuxin Sun
