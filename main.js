@@ -135,6 +135,8 @@ if (topnav) {
 /* Smooth anchor scroll (respects prefers-reduced-motion) */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
+    if (anchor.hasAttribute('data-feature-jump')) return;
+
     const id = anchor.getAttribute('href').slice(1);
     if (!id) return;
     const target = document.getElementById(id);
@@ -183,6 +185,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   if (!grid || cards.length < 2 || !buttons.length) return;
 
   function setActive(index) {
+    const activeCard = cards[index];
+    const activePlan = activeCard?.dataset.pricingPlan || 'lite';
+    grid.dataset.activePlan = activePlan;
+
     buttons.forEach((button, buttonIndex) => {
       const active = buttonIndex === index;
       button.classList.toggle('is-active', active);
@@ -232,6 +238,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
       setActive(index);
     });
+  });
+
+  cards.forEach((card, index) => {
+    card.addEventListener('focusin', () => setActive(index));
+    card.addEventListener('click', () => setActive(index));
   });
 
   let pricingPagerRaf = false;
@@ -582,47 +593,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 
-  featurePagerButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const shotTarget = button.dataset.shotTarget;
-      const runInstantJump = (jump) => {
-        shotsStage?.classList.add('features__shots--instant');
-        jump();
+  const runInstantJump = (jump) => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlScrollBehavior = html.style.scrollBehavior;
+    const previousBodyScrollBehavior = body.style.scrollBehavior;
+
+    shotsStage?.classList.add('features__shots--instant');
+    html.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
+
+    try {
+      jump();
+      update();
+      requestAnimationFrame(() => {
         update();
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            shotsStage?.classList.remove('features__shots--instant');
-          });
-        });
-      };
-
-      if (shotTarget === 'shot-1') {
-        runInstantJump(() => {
-          document.getElementById('features')?.scrollIntoView({
-            behavior: 'auto',
-            block: 'start',
-          });
-        });
-        return;
-      }
-
-      const step = stepByShot.get(shotTarget);
-      if (!step) return;
-
-      const viewH = getViewportHeight();
-      const targetProgress = 0.001;
-      const stepRect = step.getBoundingClientRect();
-      const targetY = window.scrollY
-        + stepRect.top
-        - viewH * 0.5
-        + stepRect.height * targetProgress;
-      runInstantJump(() => {
-        window.scrollTo({
-          top: Math.max(0, targetY),
-          behavior: 'auto',
+          shotsStage?.classList.remove('features__shots--instant');
+          html.style.scrollBehavior = previousHtmlScrollBehavior;
+          body.style.scrollBehavior = previousBodyScrollBehavior;
         });
       });
+    } catch (error) {
+      shotsStage?.classList.remove('features__shots--instant');
+      html.style.scrollBehavior = previousHtmlScrollBehavior;
+      body.style.scrollBehavior = previousBodyScrollBehavior;
+      throw error;
+    }
+  };
+
+  function jumpToFeatureShot(shotTarget, progress = 0.001) {
+    if (shotTarget === 'shot-1') {
+      runInstantJump(() => {
+        const featuresTop = document.getElementById('features')?.getBoundingClientRect().top;
+        if (featuresTop !== undefined) window.scrollTo(0, Math.max(0, window.scrollY + featuresTop));
+      });
+      return;
+    }
+
+    const step = stepByShot.get(shotTarget);
+    if (!step) return;
+
+    const viewH = getViewportHeight();
+    const targetProgress = Math.max(0, Math.min(0.98, Number(progress) || 0.001));
+    const stepRect = step.getBoundingClientRect();
+    const targetY = window.scrollY
+      + stepRect.top
+      - viewH * 0.5
+      + stepRect.height * targetProgress;
+    runInstantJump(() => {
+      window.scrollTo(0, Math.max(0, targetY));
     });
+  }
+
+  featurePagerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      jumpToFeatureShot(button.dataset.shotTarget);
+    });
+  });
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[data-feature-jump]');
+    if (!link) return;
+    event.preventDefault();
+    jumpToFeatureShot(link.dataset.featureJump, link.dataset.featureProgress);
   });
 
   window.addEventListener('scroll', () => {

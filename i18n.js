@@ -102,15 +102,16 @@ const I18N = {
 
     /* ── Pricing ────────────────────────────────────────────── */
     "pricing.heading":       "Simple pricing",
-    "pricing.sub":           "Start for free | Unlock Pro when you're ready",
+    "pricing.sub":           "Start free. Upgrade only when you need more.",
 
     "pricing.lite.name":     "Lite",
+    "pricing.lite.badge":    "Try it first",
     "pricing.lite.price":    "Free",
     "pricing.lite.price.sub":"free forever",
-    "pricing.lite.f1":       "4 categories",
-    "pricing.lite.f2":       "20-day timeline",
-    "pricing.lite.f6":       "1 pinned context",
-    "pricing.lite.f3":       "Advanced search & filters",
+    "pricing.lite.f1":       "<span class=\"pricing-card__feature-text\">Unlimited <a href=\"#feature-time-glance\" data-feature-jump=\"shot-3\" data-feature-progress=\"0.24\">time and session management</a><br />with up to 4 categories</span>",
+    "pricing.lite.f2":       "<span class=\"pricing-card__feature-text\">20-day daily notes and <a href=\"#feature-chroline-review\" data-feature-jump=\"shot-4\" data-feature-progress=\"0.60\">ChroLine review</a></span>",
+    "pricing.lite.f6":       "<span class=\"pricing-card__feature-text\">1 pinned context in <a href=\"#feature-context-mode\" data-feature-jump=\"shot-5\" data-feature-progress=\"0.70\">Context Mode</a></span>",
+    "pricing.lite.f3":       "Advanced search & filters of notes",
     "pricing.lite.f4":       "Local storage for data privacy",
     "pricing.lite.f5":       "Relay via the cloud you choose",
     "pricing.lite.cta":      "Start for Free",
@@ -126,8 +127,8 @@ const I18N = {
     "pricing.pro.f3":        "Unlimited timeline history",
     "pricing.pro.f5":        "3 pinned contexts",
     "pricing.pro.f4":        "Export data without any constraints",
-    "pricing.pro.cta":       "Get Pro",
-    "pricing.pro.badge":     "Most popular",
+    "pricing.pro.cta":       "Upgrade to Pro",
+    "pricing.pro.badge":     "Upgrade anytime",
 
     /* ── Testimonials ───────────────────────────────────────── */
     "testimonials.heading":  "What people are saying",
@@ -258,14 +259,15 @@ const I18N = {
 
     /* ── Pricing ────────────────────────────────────────────── */
     "pricing.heading":       "简单明了的定价",
-    "pricing.sub":           "免费开始 | 准备好了再升级 Pro",
+    "pricing.sub":           "先免费开始，需要更多时再升级。",
 
     "pricing.lite.name":     "轻量版",
+    "pricing.lite.badge":    "先试试看",
     "pricing.lite.price":    "免费",
     "pricing.lite.price.sub":"永久免费",
-    "pricing.lite.f1":       "4 个分类",
-    "pricing.lite.f2":       "20 天时间线",
-    "pricing.lite.f6":       "1 个置顶上下文",
+    "pricing.lite.f1":       "<span class=\"pricing-card__feature-text\">无限<a href=\"#feature-time-glance\" data-feature-jump=\"shot-3\" data-feature-progress=\"0.24\">时间与专注时段管理</a><br />最多支持 4 个分类</span>",
+    "pricing.lite.f2":       "<span class=\"pricing-card__feature-text\">20 天每日笔记与 <a href=\"#feature-chroline-review\" data-feature-jump=\"shot-4\" data-feature-progress=\"0.60\">ChroLine 回顾</a></span>",
+    "pricing.lite.f6":       "<span class=\"pricing-card__feature-text\">在 <a href=\"#feature-context-mode\" data-feature-jump=\"shot-5\" data-feature-progress=\"0.70\">上下文模式</a> 中置顶 1 个上下文</span>",
     "pricing.lite.f3":       "高级搜索与筛选",
     "pricing.lite.f4":       "本地存储保护数据隐私",
     "pricing.lite.f5":       "通过你选择的云服务中转",
@@ -282,8 +284,8 @@ const I18N = {
     "pricing.pro.f3":        "无限时间线历史",
     "pricing.pro.f5":        "3 个置顶上下文",
     "pricing.pro.f4":        "无水印导出",
-    "pricing.pro.cta":       "获取专业版",
-    "pricing.pro.badge":     "最受欢迎",
+    "pricing.pro.cta":       "升级到专业版",
+    "pricing.pro.badge":     "随时升级",
 
     /* ── Testimonials ───────────────────────────────────────── */
     "testimonials.heading":  "用户怎么说",

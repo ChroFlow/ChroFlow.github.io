@@ -320,7 +320,7 @@
             </div>
           </div>
 
-          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-2" data-scroll-states="3">
+          <div id="feature-session-management" class="feat-step feat-step--right feat-step--no-card" data-shot="shot-2" data-scroll-states="3">
             <div class="feat-card">
               <span class="feat-step__num">01</span>
               <h3 class="feat-step__title" data-i18n="features.f3.title">Organize by Category</h3>
@@ -328,7 +328,7 @@
             </div>
           </div>
 
-          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-3" data-scroll-states="2">
+          <div id="feature-time-glance" class="feat-step feat-step--right feat-step--no-card" data-shot="shot-3" data-scroll-states="2">
             <div class="feat-card">
               <span class="feat-step__num">02</span>
               <h3 class="feat-step__title" data-i18n="features.f2.title">How the Timer Works</h3>
@@ -336,7 +336,7 @@
             </div>
           </div>
 
-          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-4" data-scroll-states="3">
+          <div id="feature-chroline-review" class="feat-step feat-step--right feat-step--no-card" data-shot="shot-4" data-scroll-states="3">
             <div class="feat-card">
               <span class="feat-step__num">03</span>
               <h3 class="feat-step__title" data-i18n="features.f4.title">Back to the month view</h3>
@@ -344,7 +344,7 @@
             </div>
           </div>
 
-          <div class="feat-step feat-step--right feat-step--no-card" data-shot="shot-5" data-scroll-states="2">
+          <div id="feature-context-mode" class="feat-step feat-step--right feat-step--no-card" data-shot="shot-5" data-scroll-states="2">
             <div class="feat-card">
               <span class="feat-step__num">04</span>
               <h3 class="feat-step__title" data-i18n="features.f5.title">Work with context</h3>
@@ -429,32 +429,38 @@
 
         <div class="pricing__header reveal-on-scroll">
           <h2 data-i18n="pricing.heading">Simple pricing</h2>
-          <p data-i18n="pricing.sub">Start free. Upgrade when you're ready.</p>
+          <p data-i18n="pricing.sub">Start free. Upgrade only when you need more.</p>
         </div>
 
-        <div class="pricing__grid">
+        <div class="pricing__grid" data-active-plan="lite">
 
-          <div class="pricing-card reveal-on-scroll">
+          <div class="pricing-card pricing-card--lite reveal-on-scroll" data-pricing-plan="lite">
+            <span class="pricing-card__badge" data-i18n="pricing.lite.badge">Try it first</span>
             <div class="pricing-card__name" data-i18n="pricing.lite.name">Lite</div>
             <div class="pricing-card__price">
               <span class="amount" data-i18n="pricing.lite.price">Free</span>
             </div>
             <ul class="pricing-card__features" role="list">
-              <li data-i18n="pricing.lite.f1">Daily notes</li>
-              <li data-i18n="pricing.lite.f2">7-day timeline</li>
-              <li data-i18n="pricing.lite.f6">1 pinned context</li>
+              <li><span class="pricing-card__feature-text">Unlimited <a href="#feature-time-glance" data-feature-jump="shot-3" data-feature-progress="0.24">time and session management</a><br />with up to 4 categories</span></li>
+              <li><span class="pricing-card__feature-text">20-day daily notes and <a href="#feature-chroline-review" data-feature-jump="shot-4" data-feature-progress="0.40">ChroLine review</a></span></li>
+              <li><span class="pricing-card__feature-text">1 pinned context in <a href="#feature-context-mode" data-feature-jump="shot-5" data-feature-progress="0.70">Context Mode</a></span></li>
               <li data-i18n="pricing.lite.f3">Advanced search &amp; filters</li>
               <li data-i18n="pricing.lite.f4">Local storage for data privacy</li>
               <li data-i18n="pricing.lite.f5">Relay via the cloud you choose</li>
             </ul>
             <div class="pricing-card__cta">
-              <a href="#download" class="btn btn--secondary" data-i18n="pricing.lite.cta">Download Free</a>
+              <a href="#download" class="btn btn--primary" data-i18n="pricing.lite.cta">Download Free</a>
+              <p class="pricing-card__legal">
+                By downloading, you agree to the
+                <a href="terms.html">Terms of Service</a> and
+                <a href="privacy.html">Privacy Policy</a>.
+              </p>
             </div>
           </div>
 
-          <div class="pricing-card--pro-wrap reveal-on-scroll">
+          <div class="pricing-card--pro-wrap reveal-on-scroll" data-pricing-plan="pro">
             <div class="pricing-card pricing-card--pro">
-              <span class="pricing-card__badge" data-i18n="pricing.pro.badge">Most popular</span>
+              <span class="pricing-card__badge" data-i18n="pricing.pro.badge">Upgrade anytime</span>
               <div class="pricing-card__name" data-i18n="pricing.pro.name">Pro</div>
               <div class="pricing-card__price-group">
                 <div class="pricing-card__onetime" data-i18n="pricing.pro.onetime">One-time purchase</div>
@@ -477,7 +483,7 @@
               </ul>
               <div class="pricing-card__cta">
                 <!-- <a href="https://chroflow.lemonsqueezy.com/checkout/buy/3111e1b2-ee5f-46ec-927c-3ad0803dff97" class="btn btn--primary" data-i18n="pricing.pro.cta">Get Pro</a> -->
-                <a href="https://chroflow.lemonsqueezy.com/checkout/buy/a7995f6d-0c48-4b58-a00d-1429001f8b54?discount=0" class="btn btn--primary" data-i18n="pricing.pro.cta">Get Pro</a>
+                <a href="https://chroflow.lemonsqueezy.com/checkout/buy/a7995f6d-0c48-4b58-a00d-1429001f8b54?discount=0" class="btn btn--secondary" data-i18n="pricing.pro.cta">Upgrade to Pro</a>
                 <p class="pricing-card__legal">
                   By purchasing, you agree to the
                   <a href="terms.html">Terms of Service</a>,
