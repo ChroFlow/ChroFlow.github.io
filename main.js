@@ -694,8 +694,13 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   const isMac     = /Mac/.test(ua) && !/iPhone|iPad/.test(ua);
   const isWindows = /Win/.test(ua);
 
-  if (isMac)     btnMac.classList.add('is-platform');
-  if (isWindows) btnWin.classList.add('is-platform');
+  btnMac.classList.remove('is-platform');
+  btnWin.classList.remove('is-platform');
+  if (isMac) {
+    btnMac.classList.add('is-platform');
+  } else if (isWindows) {
+    btnWin.classList.add('is-platform');
+  }
 
   // Show install guide on click
   const guideMac = document.getElementById('guide-mac');

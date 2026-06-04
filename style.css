@@ -443,6 +443,10 @@ section {
   padding: 1rem 2rem;
   border-radius: 14px;
   min-width: 220px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  box-shadow: none;
 }
 .btn--download .btn-label {
   font-size: 1rem;
@@ -453,24 +457,14 @@ section {
   font-weight: var(--fw-regular);
   opacity: 0.7;
 }
-/* Mac — dark Apple style */
-.btn--mac {
+/* Current platform */
+.btn--download.is-platform {
   background: #1d1d1f;
   color: #fff;
+  border-color: #1d1d1f;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
 }
-.btn--mac:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
-/* Windows — light outlined */
-.btn--win {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border: 1.5px solid var(--color-border);
-}
-/* Highlighted platform button */
-.btn--download.is-platform {
-  outline: 2.5px solid var(--color-purple);
-  outline-offset: 2px;
-}
+.btn--download.is-platform:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
 
 /* ═══════════════════════════════════════════════════════════
    REVEAL ON SCROLL
