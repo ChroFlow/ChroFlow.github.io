@@ -8,7 +8,7 @@ const I18N = {
     /* ── Navigation ─────────────────────────────────────────── */
     "nav.features":   "Features",
     "nav.download":   "Download",
-    "nav.pricing":    "Pricing",
+    "nav.pricing":    "Lite & Pro",
     "nav.faq":        "FAQ",
     "nav.contact":    "Contact",
 
@@ -105,8 +105,9 @@ const I18N = {
     "pricing.sub":           "Start free. Upgrade only when you need more.",
 
     "pricing.lite.name":     "Lite",
-    "pricing.lite.badge":    "Try it first",
+    "pricing.lite.badge":    "Start here",
     "pricing.lite.price":    "Free",
+    "pricing.lite.intro":    "All key features included, so you can track, write, and review from day one.",
     "pricing.lite.price.sub":"free forever",
     "pricing.lite.f1":       "<span class=\"pricing-card__feature-text\">Unlimited <a href=\"#feature-time-glance\" data-feature-jump=\"shot-3\" data-feature-progress=\"0.24\">time and session management</a><br />with up to 4 categories</span>",
     "pricing.lite.f2":       "<span class=\"pricing-card__feature-text\">20-day daily notes and <a href=\"#feature-chroline-review\" data-feature-jump=\"shot-4\" data-feature-progress=\"0.60\">ChroLine review</a></span>",
@@ -124,7 +125,7 @@ const I18N = {
     "pricing.pro.price.sub": "lifetime access on 2 devices",
     "pricing.pro.f1":        "Everything in Lite, plus:",
     "pricing.pro.f2":        "Unlimited number of categories",
-    "pricing.pro.f3":        "Unlimited timeline history",
+    "pricing.pro.f3":        "Unlimited daily notes & ChroLine history",
     "pricing.pro.f5":        "3 pinned contexts",
     "pricing.pro.f4":        "Export data without any constraints",
     "pricing.pro.cta":       "Upgrade to Pro",
@@ -165,7 +166,7 @@ const I18N = {
     /* ── Navigation ─────────────────────────────────────────── */
     "nav.features":   "功能特点",
     "nav.download":   "下载",
-    "nav.pricing":    "价格",
+    "nav.pricing":    "轻量版 & 专业版",
     "nav.faq":        "常见问题",
     "nav.contact":    "联系我们",
 
@@ -262,8 +263,9 @@ const I18N = {
     "pricing.sub":           "先免费开始，需要更多时再升级。",
 
     "pricing.lite.name":     "轻量版",
-    "pricing.lite.badge":    "先试试看",
+    "pricing.lite.badge":    "从这里开始",
     "pricing.lite.price":    "免费",
+    "pricing.lite.intro":    "包含核心功能，可以从完整的 ChroFlow 工作流开始。",
     "pricing.lite.price.sub":"永久免费",
     "pricing.lite.f1":       "<span class=\"pricing-card__feature-text\">无限<a href=\"#feature-time-glance\" data-feature-jump=\"shot-3\" data-feature-progress=\"0.24\">时间与专注时段管理</a><br />最多支持 4 个分类</span>",
     "pricing.lite.f2":       "<span class=\"pricing-card__feature-text\">20 天每日笔记与 <a href=\"#feature-chroline-review\" data-feature-jump=\"shot-4\" data-feature-progress=\"0.60\">ChroLine 回顾</a></span>",

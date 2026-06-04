@@ -76,7 +76,6 @@
 /* ── Reset ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -2082,29 +2081,12 @@ section {
   position: relative;
   z-index: 4;
   background: var(--color-surface);
-  padding: var(--section-pad) var(--side-pad);
+  padding: 5rem var(--side-pad) 5rem;
   text-align: center;
 }
 .pricing__inner {
   max-width: 860px;
   margin: 0 auto;
-}
-.pricing__header {
-  margin-bottom: 3.5rem;
-}
-.pricing__header h2 {
-  font-size: clamp(1.85rem, 4.2vw, 3.25rem);
-  font-weight: 300;
-  line-height: 1.08;
-  letter-spacing: -0.015em;
-  color: #17171b;
-  margin-bottom: 0.5rem;
-}
-.pricing__header p {
-  font-size: 1.05rem;
-  color: #8f8f97;
-  font-weight: var(--fw-light);
-  letter-spacing: -0.01em;
 }
 .pricing__grid {
   display: grid;
@@ -2209,6 +2191,13 @@ section {
   font-size: 0.9rem;
   color: var(--color-muted);
 }
+.pricing-card__intro {
+  max-width: 20rem;
+  margin-top: -0.8rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #6f7470;
+}
 .pricing-card__forever {
   font-size: 1.08rem;
   font-weight: var(--fw-semibold);
@@ -2311,7 +2300,7 @@ section {
   flex: 1;
 }
 .pricing-card--lite .pricing-card__features {
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 .pricing-card__features li {
   display: flex;
@@ -2380,19 +2369,6 @@ section {
 
   .pricing__inner {
     max-width: min(92vw, 760px);
-  }
-
-  .pricing__header {
-    margin-bottom: 1.2rem;
-  }
-
-  .pricing__header h2 {
-    font-size: clamp(1.25rem, 5.2vh, 1.65rem);
-    margin-bottom: 0.25rem;
-  }
-
-  .pricing__header p {
-    font-size: 0.82rem;
   }
 
   .pricing__grid {
@@ -2472,19 +2448,6 @@ section {
   .pricing {
     overflow: hidden;
     padding: clamp(3.5rem, 8vh, 4.5rem) 0;
-  }
-
-  .pricing__header {
-    margin-bottom: 2rem;
-    padding: 0 var(--side-pad);
-  }
-
-  .pricing__header h2 {
-    font-size: clamp(1.55rem, 7vw, 2rem);
-  }
-
-  .pricing__header p {
-    font-size: 0.95rem;
   }
 
   .pricing__grid {

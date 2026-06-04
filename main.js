@@ -132,7 +132,7 @@ if (topnav) {
   });
 })();
 
-/* Smooth anchor scroll (respects prefers-reduced-motion) */
+/* Instant anchor jump */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     if (anchor.hasAttribute('data-feature-jump')) return;
@@ -143,8 +143,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (!target) return;
     e.preventDefault();
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: 'auto', block: 'start' });
   });
 });
 
@@ -705,7 +704,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   function showGuide(panel) {
     [guideMac, guideWin].forEach(p => { p.hidden = true; });
     panel.hidden = false;
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    setTimeout(() => panel.scrollIntoView({ behavior: 'auto', block: 'nearest' }), 50);
   }
 
   btnMac.addEventListener('click', () => showGuide(guideMac));
