@@ -682,7 +682,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
 
 /* ══════════════════════════════════════════════════════════
    6. DOWNLOAD — platform detection
-   Highlights the button matching the user's OS.
+   Highlights the matching OS button, and the Mac chip build when available.
    ══════════════════════════════════════════════════════════ */
 
 (function initPlatformDetection() {
@@ -690,16 +690,75 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   const btnWin = document.getElementById('btn-win');
   if (!btnMac || !btnWin) return;
 
+  const macBuilds = {
+    arm: {
+      href: 'https://www.dropbox.com/scl/fi/stq9lb9clcvxd0uypwc73/ChroFlow_1.0.1_aarch64.dmg?rlkey=l4s1b637h5baqr7zgvyi6yggc&st=qcio1v2j&dl=1',
+      i18nKey: 'download.mac.arm.sub',
+      fallbackText: 'Apple Silicon · macOS 13+',
+      ariaLabel: 'Download ChroFlow for macOS Apple Silicon',
+    },
+    intel: {
+      href: 'https://www.dropbox.com/scl/fi/719tk97r3jjqrtu0m14vj/ChroFlow_1.0.1_x64.dmg?rlkey=bfzo8aprv9f6uenfz2r8ods4x&st=56t5pab9&dl=1',
+      i18nKey: 'download.mac.intel.sub',
+      fallbackText: 'Intel chip · macOS 13+',
+      ariaLabel: 'Download ChroFlow for macOS Intel chip',
+    },
+  };
+  const downloadButtons = [btnMac, btnWin];
   const ua = navigator.userAgent;
-  const isMac     = /Mac/.test(ua) && !/iPhone|iPad/.test(ua);
-  const isWindows = /Win/.test(ua);
+  const platform = navigator.userAgentData?.platform || navigator.platform || '';
+  const isMac = (/mac/i.test(platform) || /Mac/.test(ua)) && !/iPhone|iPad|iPod/.test(ua);
+  const isWindows = /win/i.test(platform) || /Win/.test(ua);
+  const macSub = btnMac.querySelector('.btn-sub');
 
-  btnMac.classList.remove('is-platform');
-  btnWin.classList.remove('is-platform');
+  function highlight(button) {
+    downloadButtons.forEach(btn => btn.classList.remove('is-platform'));
+    if (button) button.classList.add('is-platform');
+  }
+
+  function setMacBuild(buildName) {
+    const build = macBuilds[buildName] || macBuilds.arm;
+    const dict = typeof I18N !== 'undefined' ? I18N[currentLang] || I18N.en : null;
+
+    btnMac.href = build.href;
+    btnMac.setAttribute('aria-label', build.ariaLabel);
+
+    if (macSub) {
+      macSub.dataset.i18n = build.i18nKey;
+      macSub.textContent = dict?.[build.i18nKey] || build.fallbackText;
+    }
+  }
+
+  async function detectMacArchitecture() {
+    if (!isMac || !navigator.userAgentData?.getHighEntropyValues) return null;
+
+    try {
+      const { architecture } = await navigator.userAgentData.getHighEntropyValues(['architecture']);
+      const arch = String(architecture || '').toLowerCase();
+      if (/(arm|aarch64)/.test(arch)) return 'arm';
+      if (/(x86|x64|amd64|ia32)/.test(arch)) return 'intel';
+    } catch (error) {
+      console.warn('[ChroFlow download] Mac chip detection unavailable.', error);
+    }
+
+    return null;
+  }
+
+  setMacBuild('arm');
+
   if (isMac) {
-    btnMac.classList.add('is-platform');
+    highlight(btnMac);
+    detectMacArchitecture().then(arch => {
+      if (arch === 'intel') {
+        setMacBuild('intel');
+      } else if (arch === 'arm') {
+        setMacBuild('arm');
+      }
+    });
   } else if (isWindows) {
-    btnWin.classList.add('is-platform');
+    highlight(btnWin);
+  } else {
+    highlight(null);
   }
 
   // Show install guide on click
@@ -707,7 +766,8 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   const guideWin = document.getElementById('guide-win');
 
   function showGuide(panel) {
-    [guideMac, guideWin].forEach(p => { p.hidden = true; });
+    if (!panel) return;
+    [guideMac, guideWin].forEach(p => { if (p) p.hidden = true; });
     panel.hidden = false;
     setTimeout(() => panel.scrollIntoView({ behavior: 'auto', block: 'nearest' }), 50);
   }
