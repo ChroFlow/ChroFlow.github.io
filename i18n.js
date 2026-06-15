@@ -22,7 +22,7 @@ const I18N = {
     "hero.title":     "See where your time goes <br> Trace how your ideas grow",
     "hero.workflow.project": "Choose a project",
     "hero.workflow.timer": "Start a timer",
-    "hero.workflow.notes": "Write notes",
+    "hero.workflow.notes": "Write down your thoughts",
     "hero.summary":   "ChroFlow automatically organizes what you write as you work,<span class='hero-summary-break'><br /></span>turning each project into a searchable timeline — locally on your desktop.",
     "hero.cta":       "Start for Free",
     "hero.cta.secondary": "How it works",
