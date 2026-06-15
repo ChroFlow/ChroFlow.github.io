@@ -70,6 +70,11 @@
     <button id="topnav-scrim" class="topnav__scrim" type="button" aria-label="Close navigation menu"></button>
   </nav>
 
+  <nav class="page-quicknav" aria-label="Page shortcuts">
+    <a href="#hero" class="page-quicknav__link" data-i18n="quicknav.backTop">Back to top</a>
+    <a href="#download" class="page-quicknav__link" data-i18n="quicknav.download">Skip to download</a>
+  </nav>
+
   <main id="main-content">
 
     <!-- ══════════════════════════════════════════════════════
@@ -77,16 +82,38 @@
          ══════════════════════════════════════════════════════ -->
     <section id="hero" class="hero" aria-label="Hero">
       <div class="hero__inner">
+        <!--
+        <p class="hero__eyebrow" aria-label="Daily Notes, Session Timers, Project Timelines">
+          <span class="hero__eyebrow-item" data-i18n="hero.kicker.daily">Daily Notes</span>
+          <span class="hero__eyebrow-separator" aria-hidden="true">·</span>
+          <span class="hero__eyebrow-item" data-i18n="hero.kicker.sessions">Session Timers</span>
+          <span class="hero__eyebrow-separator" aria-hidden="true">·</span>
+          <span class="hero__eyebrow-item" data-i18n="hero.kicker.timelines">Project Timelines</span>
+        </p> -->
         <h1 class="hero__title" data-i18n-title-lines="hero.title">
-          <span class="hero__title-line hero__title-line--light">Capture freely</span>
-          <span class="hero__title-line hero__title-line--strong">Look back clearly</span>
+          <span class="hero__title-line hero__title-line--light">See where your time goes</span>
+          <span class="hero__title-line hero__title-line--strong">Trace how your ideas grow</span>
         </h1>
-        <p class="hero__summary" data-i18n-html="hero.summary">Daily notes, task timers, and timeline-based review —  <br /> one seamless workflow, locally on your desktop.</p>
+        <div class="hero__workflow" aria-label="Workflow steps">
+          <a href="#features" class="hero__workflow-chip" data-feature-jump="shot-2" data-feature-progress="0.22" data-i18n="hero.workflow.project">Choose a project</a>
+          <span class="hero__workflow-arrow" aria-hidden="true">→</span>
+          <a href="#features" class="hero__workflow-chip" data-feature-jump="shot-2" data-feature-progress="0.42" data-i18n="hero.workflow.timer">Start a timer</a>
+          <span class="hero__workflow-arrow" aria-hidden="true">→</span>
+          <a href="#features" class="hero__workflow-chip" data-feature-jump="shot-2" data-feature-progress="0.70" data-i18n="hero.workflow.notes">Write notes</a>
+        </div>
+        <p class="hero__summary">
+          <span class="hero__workflow-inline">
+            <a href="#features" data-feature-jump="shot-2" data-feature-progress="0.22" data-i18n="hero.workflow.project">Choose a project</a>,
+            <a href="#features" data-feature-jump="shot-2" data-feature-progress="0.42" data-i18n="hero.workflow.timer">Start a timer</a>,
+            <a href="#features" data-feature-jump="shot-2" data-feature-progress="0.70" data-i18n="hero.workflow.notes">Write notes</a>.
+          </span>
+          <span data-i18n-html="hero.summary">ChroFlow keeps notes and sessions automatically tied to their projects,<span class="hero-summary-break"><br /></span>turning your work into searchable project timelines — locally on your desktop.</span>
+        </p>
         <div class="hero__actions">
           <a href="#download" class="btn btn--primary" data-i18n="hero.cta">Start for Free</a>
-          <a href="#features" class="btn btn--secondary btn--with-icon">
+          <a href="#features" class="btn btn--secondary btn--with-icon" data-feature-jump="shot-1" data-feature-progress="0.001">
             <img src="images/swirl.png" alt="" aria-hidden="true" class="btn__icon" />
-            <span data-i18n="hero.cta.secondary">How ChroFlow works?</span>
+            <span data-i18n="hero.cta.secondary">How it works</span>
           </a>
         </div>
       </div>
@@ -122,8 +149,6 @@
     <section id="solution" class="solution" aria-label="Solution">
       <div class="solution__inner">
         <h2 class="solution__title reveal-on-scroll" data-i18n-html="solution.title"></h2>
-        <p class="solution__tagline reveal-on-scroll" data-i18n="solution.tagline">Capture freely. Look back clearly.</p>
-        <p class="solution__founder reveal-on-scroll" data-i18n-html="solution.founder" hidden></p>
       </div>
     </section>
 
@@ -165,7 +190,7 @@
               <div class="feat-shot__right-mask" aria-hidden="true"></div>
               <div class="feat-shot__left-mask" aria-hidden="true"></div>
             </div>
-            <div class="feat-shot-title feat-shot-title--one" data-shot-card="shot-1" data-shot-x-var="--shot-1-main-title-x" data-shot-1-x-var="--shot-1-main-title-x" data-i18n="features.heading">How ChroFlow works</div>
+            <div class="feat-shot-title feat-shot-title--one" data-shot-card="shot-1" data-shot-x-var="--shot-1-main-title-x" data-shot-1-x-var="--shot-1-main-title-x" data-i18n="features.heading">See how ChroFlow works</div>
             <div class="feat-shot-focus-title feat-shot-focus-title--left" data-shot-card="shot-1" data-shot-x-var="--shot-1-left-title-x" data-shot-1-x-var="--shot-1-left-title-x" data-i18n="features.f1.focusTitle">Where your time goes</div>
             <div class="feat-shot-focus-title feat-shot-focus-title--right" data-shot-card="shot-1" data-shot-x-var="--shot-1-right-title-x" data-shot-1-x-var="--shot-1-right-title-x" data-i18n="features.f1.focusThoughts">Where your thoughts live</div>
             <div class="feat-shot-focus-tag feat-shot-focus-tag--calendar" data-shot-card="shot-1" data-shot-x-var="--shot-1-calendar-x" data-shot-1-x-var="--shot-1-calendar-x" data-i18n="features.f1.focusCalendar">Calendar</div>
@@ -305,8 +330,6 @@
               <button class="features__pager-btn" type="button" data-shot-target="shot-4" aria-label="Go to all your thoughts in a line"></button>
               <button class="features__pager-btn" type="button" data-shot-target="shot-5" aria-label="Go to work with context"></button>
             </nav>
-
-            <a href="#download" class="features__skip" data-i18n="features.skipDownload">Skip to download</a>
 
           </div>
         </div><!-- /features__sticky-bg -->

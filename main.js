@@ -147,6 +147,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+(function initPageQuicknav() {
+  const quicknav = document.querySelector('.page-quicknav');
+  const showFrom = document.getElementById('solution');
+  if (!quicknav || !showFrom) return;
+
+  const update = () => {
+    const threshold = showFrom.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.2;
+    quicknav.classList.toggle('is-visible', window.scrollY >= threshold);
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
 
 /* ══════════════════════════════════════════════════════════
    3. REVEAL ON SCROLL

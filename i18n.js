@@ -11,12 +11,21 @@ const I18N = {
     "nav.pricing":    "Lite & Pro",
     "nav.faq":        "FAQ",
     "nav.contact":    "Contact",
+    "quicknav.backTop": "Back to top",
+    "quicknav.download": "Skip to download",
 
     /* ── Hero ───────────────────────────────────────────────── */
-    "hero.title":     "Capture freely <br />Look back clearly",
-    "hero.summary":   "Daily notes, task timers, and timeline-based review —  <br /> one seamless workflow, locally on your desktop.",
+    "hero.kicker":    "Daily Notes · Session Timers · Project Timelines",
+    "hero.kicker.daily": "Daily Notes",
+    "hero.kicker.sessions": "Session Timers",
+    "hero.kicker.timelines": "Project Timelines",
+    "hero.title":     "See where your time goes <br> Trace how your ideas grow",
+    "hero.workflow.project": "Choose a project",
+    "hero.workflow.timer": "Start a timer",
+    "hero.workflow.notes": "Write notes",
+    "hero.summary":   "ChroFlow automatically organizes what you write as you work,<span class='hero-summary-break'><br /></span>turning each project into a searchable timeline — locally on your desktop.",
     "hero.cta":       "Start for Free",
-    "hero.cta.secondary": "How ChroFlow works?",
+    "hero.cta.secondary": "How it works",
 
     /* ── Pain points ────────────────────────────────────────── */
     "pain.c1.text": "Worked all day — <br /><strong>but where did your time go?</strong>",
@@ -29,8 +38,9 @@ const I18N = {
     "solution.founder":  "Built by a Harvard-trained researcher, <br />for thinkers and builders whose best work doesn't happen in meetings",
 
     /* ── Core features ──────────────────────────────────────── */
-    "features.heading":  "How ChroFlow works",
+    "features.heading":  "See how ChroFlow works",
     "features.rotate.notice": "Rotate your device for an easier read",
+    "features.backTop": "Back to top",
     "features.skipDownload": "Skip to download",
     "features.f1.visualLabel": "How ChroFlow works",
     "features.f1.focusTitle": "Where your time goes",
@@ -148,7 +158,7 @@ const I18N = {
     "faq.q2.q":   "Does ChroFlow have AI features?",
     "faq.q2.a":   "No — and that's also intentional. ChroFlow is designed for your own thinking. <strong>AI can generate endless Markdown files, but that does not make them your thoughts.</strong> You can draft with AI elsewhere, paste the result into ChroFlow, or export data for analysis if you choose. <strong> ChroFlow does not upload your notes to a model or automatically distill your thinking with AI.</strong>",
     "faq.q3.q":   "Is there automatic cloud sync?",
-    "faq.q3.a":   "We have no servers. <strong>Your data never passes through us.</strong> If you want to sync across devices, point them all at the same folder in your own cloud — Dropbox, iCloud, whatever you trust. ChroFlow's algorithm handles the rest, cleanly, without conflicts.",
+    "faq.q3.a":   "ChroFlow does not run its own sync server. <strong>Your data never passes through us.</strong><br><br>Sync between devices works like this:<br><span class='faq-step-number'>1.</span> On your first device, open Settings with the <span class='faq-inline-icon' role='img' aria-label='Settings'><svg viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='3.1'/><path d='M19.3 13.5c.1-.5.2-1 .2-1.5s-.1-1-.2-1.5l2-1.5-2-3.4-2.4 1a7.8 7.8 0 0 0-2.4-1.4L14.1 2h-4.2l-.4 3.2a7.8 7.8 0 0 0-2.4 1.4l-2.4-1-2 3.4 2 1.5c-.1.5-.2 1-.2 1.5s.1 1 .2 1.5l-2 1.5 2 3.4 2.4-1a7.8 7.8 0 0 0 2.4 1.4l.4 3.2h4.2l.4-3.2a7.8 7.8 0 0 0 2.4-1.4l2.4 1 2-3.4-2-1.5Z'/></svg></span> button at the bottom. Name the device, then change the data directory to a folder in Dropbox, OneDrive, or another cloud service you trust.<br><span class='faq-step-number'>2.</span> On your other device, do the same and point ChroFlow to that same cloud folder. The two devices are now connected through your own storage.<br><span class='faq-step-number'>3.</span> To pull data from one device to another, click the <span class='faq-inline-icon' role='img' aria-label='Recovery'><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3v9'/><path d='m8.7 8.7 3.3 3.3 3.3-3.3'/><path d='M5 15.2h14v3.1A1.7 1.7 0 0 1 17.3 20H6.7A1.7 1.7 0 0 1 5 18.3v-3.1Z'/><path d='M8.4 15.2v-1.8h7.2v1.8'/></svg></span> Recovery button next to Settings. You will see files from other devices and snapshots from this device. Double-click the one you want to use, and ChroFlow will pull that data across.",
     "faq.q4.q":   "Can I export my data?",
     "faq.q4.a":   "Yes. Any ChroLine search result can be exported as a self-contained webpage — ready to share as a weekly report or archive. Your data is on your machine. <strong>You own it completely.</strong>",
 
@@ -170,10 +180,19 @@ const I18N = {
     "nav.pricing":    "轻量版 & 专业版",
     "nav.faq":        "常见问题",
     "nav.contact":    "联系我们",
+    "quicknav.backTop": "返回顶部",
+    "quicknav.download": "跳到下载",
 
     /* ── Hero ───────────────────────────────────────────────── */
+    "hero.kicker":    "每日笔记 · 会话计时 · 项目时间线",
+    "hero.kicker.daily": "每日笔记",
+    "hero.kicker.sessions": "会话计时",
+    "hero.kicker.timelines": "项目时间线",
     "hero.title":     "自由记录 <br />清晰回看",
-    "hero.summary":   "每日笔记、计时、时间线回看<br />一个顺手的工作流",
+    "hero.workflow.project": "选择项目",
+    "hero.workflow.timer": "开始计时",
+    "hero.workflow.notes": "写下笔记",
+    "hero.summary":   "ChroFlow 会自动把笔记和会话绑定到对应项目，把你的工作整理成可搜索的项目时间线，本地保存在你的桌面端。",
     "hero.cta":       "免费下载",
     "hero.cta.secondary": "ChroFlow 如何运作",
 
@@ -190,6 +209,7 @@ const I18N = {
     /* ── Core features ──────────────────────────────────────── */
     "features.heading":  "ChroFlow 如何运作？",
     "features.rotate.notice": "把设备横过来，读起来更轻松",
+    "features.backTop": "返回顶部",
     "features.skipDownload": "跳到下载",
     "features.f1.visualLabel": "ChroFlow 如何运作？",
     "features.f1.focusTitle": "时间都去了哪里",
@@ -307,7 +327,7 @@ const I18N = {
     "faq.q2.q":   "ChroFlow 有 AI 功能吗？",
     "faq.q2.a":   "没有。ChroFlow 是为你自己的思考设计的。<strong>AI 可以生成大量 Markdown 文件，但那不等于它们就是你的想法。</strong> 你可以在别处用 AI 起草内容，再贴进 ChroFlow；也可以在需要时导出数据，让 AI 帮你分析。但 ChroFlow 不会把你的笔记上传给模型，也不会<strong>用 AI 自动蒸馏你的思考。</strong> 你的上下文应该属于你，你也应该清楚自己的数据何时、以什么方式离开设备。",
     "faq.q3.q":   "有自动云同步吗？",
-    "faq.q3.a":   "我们没有服务器。<strong>你的数据从不经过我们。</strong> 如果想跨设备同步，只需将所有设备指向你自己云存储中的同一文件夹——Dropbox、iCloud，或任何你信任的服务。ChroFlow 的算法会干净利落地处理其余的事，不产生冲突。",
+    "faq.q3.a":   "ChroFlow 不运行自己的同步服务器。<strong>你的数据从不经过我们。</strong><br><br>跨设备同步是这样工作的：<br><span class='faq-step-number'>1.</span> 在第一台设备上，点击底部的 <span class='faq-inline-icon' role='img' aria-label='设置'><svg viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='3.1'/><path d='M19.3 13.5c.1-.5.2-1 .2-1.5s-.1-1-.2-1.5l2-1.5-2-3.4-2.4 1a7.8 7.8 0 0 0-2.4-1.4L14.1 2h-4.2l-.4 3.2a7.8 7.8 0 0 0-2.4 1.4l-2.4-1-2 3.4 2 1.5c-.1.5-.2 1-.2 1.5s.1 1 .2 1.5l-2 1.5 2 3.4 2.4-1a7.8 7.8 0 0 0 2.4 1.4l.4 3.2h4.2l.4-3.2a7.8 7.8 0 0 0 2.4-1.4l2.4 1 2-3.4-2-1.5Z'/></svg></span> 按钮打开设置。给这台设备命名，然后把数据目录改到 Dropbox、OneDrive、iCloud，或任何你信任的云盘文件夹里。<br><span class='faq-step-number'>2.</span> 在另一台设备上做同样的设置，并把 ChroFlow 指向同一个云盘文件夹。这样两台设备就通过你自己的云存储连接起来了。<br><span class='faq-step-number'>3.</span> 如果想把一台设备的数据拉到另一台设备，点击设置旁边的 <span class='faq-inline-icon' role='img' aria-label='恢复'><svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3v9'/><path d='m8.7 8.7 3.3 3.3 3.3-3.3'/><path d='M5 15.2h14v3.1A1.7 1.7 0 0 1 17.3 20H6.7A1.7 1.7 0 0 1 5 18.3v-3.1Z'/><path d='M8.4 15.2v-1.8h7.2v1.8'/></svg></span> Recovery 按钮。你会看到来自其他设备的文件，以及当前设备自己的快照。双击你想使用的那一份，ChroFlow 就会把数据拉过来。",
     "faq.q4.q":   "我可以导出数据吗？",
     "faq.q4.a":   "可以。任何 ChroLine 搜索结果都可以导出为独立网页——可作为周报或存档分享。你的数据是本地文件，<strong>完全归你所有。</strong>",
 
