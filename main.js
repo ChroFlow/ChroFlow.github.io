@@ -273,6 +273,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   updateActive();
 })();
 
+(function initFaqAccordion() {
+  const toggles = Array.from(document.querySelectorAll('.faq__toggle'));
+  if (!toggles.length) return;
+
+  function setExpanded(toggle, expanded) {
+    const answerId = toggle.getAttribute('aria-controls');
+    const answer = answerId ? document.getElementById(answerId) : null;
+    if (!answer) return;
+
+    toggle.setAttribute('aria-expanded', String(expanded));
+    answer.hidden = !expanded;
+    toggle.closest('.faq__item')?.classList.toggle('is-open', expanded);
+  }
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      setExpanded(toggle, shouldOpen);
+    });
+  });
+})();
+
 
 /* ══════════════════════════════════════════════════════════
    4. FEATURES — PINNED SCROLL (desktop / landscape)
@@ -726,6 +748,12 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   const isWindows = /win/i.test(platform) || /Win/.test(ua);
   const macSub = btnMac.querySelector('.btn-sub');
 
+  document.documentElement.dataset.platform = isMac
+    ? 'mac'
+    : isWindows
+      ? 'windows'
+      : 'other';
+
   function highlight(button) {
     downloadButtons.forEach(btn => btn.classList.remove('is-platform'));
     if (button) button.classList.add('is-platform');
@@ -779,6 +807,34 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   // Show install guide on click
   const guideMac = document.getElementById('guide-mac');
   const guideWin = document.getElementById('guide-win');
+  const faqInstallContent = document.getElementById('faq-install-content');
+
+  function cloneGuideForFaq(panel) {
+    if (!panel) return null;
+    const clone = panel.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.hidden = false;
+    clone.classList.add('faq__install-panel');
+    return clone;
+  }
+
+  function renderFaqInstallGuide() {
+    if (!faqInstallContent) return;
+    faqInstallContent.replaceChildren();
+
+    const panels = isMac
+      ? [guideMac]
+      : isWindows
+        ? [guideWin]
+        : [guideMac, guideWin];
+
+    panels.forEach(panel => {
+      const clone = cloneGuideForFaq(panel);
+      if (clone) faqInstallContent.appendChild(clone);
+    });
+  }
+
+  renderFaqInstallGuide();
 
   function showGuide(panel) {
     if (!panel) return;
