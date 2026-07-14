@@ -18,7 +18,7 @@
   <meta name="twitter:title"       content="ChroFlow" />
   <meta name="twitter:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
 
-  <link rel="stylesheet" href="style.css?v=20260713-faq-compact" />
+  <link rel="stylesheet" href="style.css?v=20260714-quicknav-state" />
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -72,7 +72,7 @@
 
   <nav class="page-quicknav" aria-label="Page shortcuts">
     <a href="#hero" class="page-quicknav__link" data-i18n="quicknav.backTop">Back to top</a>
-    <a href="#download" class="page-quicknav__link" data-i18n="quicknav.download">Skip to download</a>
+    <a href="#download" class="page-quicknav__link page-quicknav__link--download" data-i18n="quicknav.download">Skip to download</a>
   </nav>
 
   <main id="main-content">
@@ -391,7 +391,7 @@
       <div class="download__inner">
 
         <h2 class="download__title reveal-on-scroll" data-i18n="download.title">Download ChroFlow</h2>
-        <p class="download__sub reveal-on-scroll" data-i18n="download.sub">Free to start. No account required.</p>
+        <p class="download__sub reveal-on-scroll" data-latest-version>Version 1.1.0</p>
 
         <div class="download__btns reveal-on-scroll">
 
@@ -412,6 +412,16 @@
           </a>
 
         </div>
+
+        <section id="release-notes" class="release-notes reveal-on-scroll" aria-labelledby="release-notes-title">
+          <h3 id="release-notes-title">What’s new in this version?</h3>
+          <ol>
+            <li>Resizable Todo and Achievement panels for a more flexible layout.</li>
+            <li>English spelling-error highlighting in the editor.</li>
+            <li>Improved support for long LaTeX equations when importing exported HTML.</li>
+            <li>More consistent colours and contrast in dark mode.</li>
+          </ol>
+        </section>
 
         <div id="install-guide" class="install-guide" aria-live="polite">
 
@@ -723,8 +733,8 @@
   </footer>
 
   <!-- Scripts (no CDN — works on file://) -->
-  <script src="i18n.js?v=20260713-faq-groups"></script>
-  <script src="main.js?v=20260713-faq-platform"></script>
+  <script src="i18n.js?v=20260714-quicknav-state"></script>
+  <script src="main.js?v=20260714-quicknav-state"></script>
 
 </body>
 </html>

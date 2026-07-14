@@ -78,6 +78,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/** Display the release version published in latest.json. */
+(function initLatestVersion() {
+  const versionEl = document.querySelector('[data-latest-version]');
+  if (!versionEl) return;
+
+  fetch('latest.json', { cache: 'no-store' })
+    .then(response => {
+      if (!response.ok) throw new Error(`Version request failed: ${response.status}`);
+      return response.json();
+    })
+    .then(release => {
+      const version = typeof release.version === 'string' ? release.version.trim() : '';
+      if (!/^v?\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(version)) {
+        throw new Error('latest.json contains an invalid version');
+      }
+
+      versionEl.textContent = `Version ${version.replace(/^v/, '')}`;
+    })
+    .catch(() => {
+      // Keep the version embedded in index.html when offline or unavailable.
+    });
+})();
+
 /* ══════════════════════════════════════════════════════════
    2. TOP NAV — stays visible from the first screen
    ══════════════════════════════════════════════════════════ */
@@ -150,11 +173,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 (function initPageQuicknav() {
   const quicknav = document.querySelector('.page-quicknav');
   const showFrom = document.getElementById('solution');
-  if (!quicknav || !showFrom) return;
+  const download = document.getElementById('download');
+  if (!quicknav || !showFrom || !download) return;
 
   const update = () => {
     const threshold = showFrom.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.2;
     quicknav.classList.toggle('is-visible', window.scrollY >= threshold);
+    quicknav.classList.toggle(
+      'is-past-features',
+      download.getBoundingClientRect().top <= window.innerHeight * 0.5
+    );
   };
 
   window.addEventListener('scroll', update, { passive: true });
@@ -807,6 +835,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   // Show install guide on click
   const guideMac = document.getElementById('guide-mac');
   const guideWin = document.getElementById('guide-win');
+  const releaseNotes = document.getElementById('release-notes');
   const faqInstallContent = document.getElementById('faq-install-content');
 
   function cloneGuideForFaq(panel) {
@@ -839,6 +868,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
   function showGuide(panel) {
     if (!panel) return;
     [guideMac, guideWin].forEach(p => { if (p) p.hidden = true; });
+    if (releaseNotes) releaseNotes.hidden = true;
     panel.hidden = false;
     setTimeout(() => panel.scrollIntoView({ behavior: 'auto', block: 'nearest' }), 50);
   }

@@ -1458,6 +1458,10 @@ a.hero__workflow-chip:focus-visible {
   transform: translateY(0);
 }
 
+.page-quicknav.is-past-features .page-quicknav__link--download {
+  display: none;
+}
+
 .page-quicknav__link {
   display: inline-flex;
   align-items: center;
@@ -2377,11 +2381,11 @@ a.hero__workflow-chip:focus-visible {
   position: relative;
   z-index: 3;
   background: var(--color-bg);
-  padding: var(--section-pad) var(--side-pad);
+  padding: var(--section-pad) var(--side-pad) clamp(1.75rem, 5vw, 1.75rem);
   text-align: center;
 }
 .download__inner {
-  max-width: 640px;
+  max-width: 820px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -2411,6 +2415,34 @@ a.hero__workflow-chip:focus-visible {
 .download__note {
   font-size: 0.85rem;
   color: var(--color-muted);
+}
+
+.release-notes {
+  width: 100%;
+  max-width: 550px;
+  padding: 2.5rem 0;
+  text-align: left;
+}
+.release-notes h3 {
+  margin: 0 0 1rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: var(--fw-semibold);
+}
+.release-notes ol {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+.release-notes li {
+  display: list-item;
+  padding-left: 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.release-notes li + li {
+  margin-top: 0.7rem;
 }
 
 /* Install guide */
