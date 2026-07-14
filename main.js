@@ -757,7 +757,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
 
   const macBuilds = {
     arm: {
-      href: 'https://www.dropbox.com/scl/fi/stq9lb9clcvxd0uypwc73/ChroFlow_1.0.1_aarch64.dmg?rlkey=l4s1b637h5baqr7zgvyi6yggc&st=qcio1v2j&dl=1',
+      href: 'https://www.dropbox.com/scl/fi/h1lg1w4djhqjl2lfu1iet/ChroFlow_latest_aarch64.dmg?rlkey=mnve11ki77pf3ztwqbas8ev3u&st=jv2ltlxz&dl=1',
       i18nKey: 'download.mac.arm.sub',
       fallbackText: 'Apple Silicon · macOS 13+',
       ariaLabel: 'Download ChroFlow for macOS Apple Silicon',
