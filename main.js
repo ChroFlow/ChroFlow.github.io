@@ -261,24 +261,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     setActive(activeIndex);
   }
 
+  function scrollToCard(index, behavior = 'smooth') {
+    const target = cards[index];
+    if (!target) return;
+
+    const gridRect = grid.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const left = grid.scrollLeft
+      + targetRect.left
+      - gridRect.left
+      - (grid.clientWidth - targetRect.width) / 2;
+
+    grid.scrollTo({
+      left: Math.max(0, left),
+      behavior,
+    });
+    setActive(index);
+  }
+
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const index = Number(button.dataset.pricingTarget);
-      const target = cards[index];
-      if (!target) return;
-
-      const gridRect = grid.getBoundingClientRect();
-      const targetRect = target.getBoundingClientRect();
-      const left = grid.scrollLeft
-        + targetRect.left
-        - gridRect.left
-        - (grid.clientWidth - targetRect.width) / 2;
-
-      grid.scrollTo({
-        left: Math.max(0, left),
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-      });
-      setActive(index);
+      scrollToCard(
+        index,
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      );
     });
   });
 
@@ -298,7 +305,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }, { passive: true });
   window.addEventListener('resize', updateActive);
 
-  updateActive();
+  const requestedPlan = new URLSearchParams(window.location.search)
+    .get('plan')
+    ?.toLowerCase();
+  const requestedIndex = cards.findIndex(
+    card => card.dataset.pricingPlan === requestedPlan
+  );
+
+  if (requestedIndex >= 0) {
+    setActive(requestedIndex);
+    requestAnimationFrame(() => scrollToCard(requestedIndex, 'auto'));
+  } else {
+    updateActive();
+  }
 })();
 
 (function initFaqAccordion() {
