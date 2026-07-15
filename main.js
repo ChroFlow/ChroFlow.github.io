@@ -782,7 +782,7 @@ document.querySelectorAll('.feat-shot video').forEach(v => {
       ariaLabel: 'Download ChroFlow for macOS Apple Silicon',
     },
     intel: {
-      href: 'https://www.dropbox.com/scl/fi/719tk97r3jjqrtu0m14vj/ChroFlow_1.0.1_x64.dmg?rlkey=bfzo8aprv9f6uenfz2r8ods4x&st=56t5pab9&dl=1',
+      href: 'https://www.dropbox.com/scl/fi/d0vgd5xer3qmr1sl7ihs2/ChroFlow_latest_x64.dmg?rlkey=oqmj4fnn0w7sw9c52ws26iu5h&st=3qmznwu5&dl=1',
       i18nKey: 'download.mac.intel.sub',
       fallbackText: 'Intel chip · macOS 13+',
       ariaLabel: 'Download ChroFlow for macOS Intel chip',
