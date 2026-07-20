@@ -18,7 +18,7 @@
   <meta name="twitter:title"       content="ChroFlow" />
   <meta name="twitter:description" content="Daily notes, passive time tracking, and visual timeline search — all in one place." />
 
-  <link rel="stylesheet" href="style.css?v=20260720-faq-scroll-offset" />
+  <link rel="stylesheet" href="style.css?v=20260720-faq-gallery-personalisation" />
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -605,13 +605,17 @@
               </button>
             </h3>
             <div id="faq-answer-theme" class="faq__answer faq__answer--theme" role="region">
-              <div class="faq__theme-gallery" data-active-theme="light">
+              <div class="faq__theme-gallery" data-active-theme="light" data-gallery-caption="Your palette. Your background. Your ChroFlow.">
                 <div class="faq__theme-previews">
                   <figure class="faq__theme-card" data-theme-preview="light">
-                    <img src="images/theme_light.png" alt="Light theme preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    <button class="faq__theme-zoom" type="button" aria-label="Open Light theme preview in gallery">
+                      <img src="images/theme_light.png" alt="Light theme preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    </button>
                   </figure>
                   <figure class="faq__theme-card" data-theme-preview="dark">
-                    <img src="images/theme_dark.png" alt="Dark theme preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    <button class="faq__theme-zoom" type="button" aria-label="Open Dark theme preview in gallery">
+                      <img src="images/theme_dark.png" alt="Dark theme preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    </button>
                   </figure>
                 </div>
                 <div class="faq__theme-pager" aria-label="Theme preview navigation">
@@ -733,13 +737,17 @@
               </button>
             </h3>
             <div id="faq-answer-stats-share" class="faq__answer faq__answer--theme" role="region">
-              <div class="faq__theme-gallery faq__theme-gallery--stats" data-active-theme="light">
+              <div class="faq__theme-gallery faq__theme-gallery--stats" data-active-theme="light" data-gallery-caption="Your colours, your way. Stats follows your theme.">
                 <div class="faq__theme-previews">
                   <figure class="faq__theme-card" data-theme-preview="light">
-                    <img src="images/Stats_light.png" alt="Light Stats preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    <button class="faq__theme-zoom" type="button" aria-label="Open Light Stats preview in gallery">
+                      <img src="images/Stats_light.png" alt="Light Stats preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    </button>
                   </figure>
                   <figure class="faq__theme-card" data-theme-preview="dark">
-                    <img src="images/stats_dark.png" alt="Dark Stats preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    <button class="faq__theme-zoom" type="button" aria-label="Open Dark Stats preview in gallery">
+                      <img src="images/stats_dark.png" alt="Dark Stats preview" width="1920" height="1080" loading="lazy" decoding="async" />
+                    </button>
                   </figure>
                 </div>
                 <div class="faq__theme-pager" aria-label="Stats preview navigation">
@@ -782,6 +790,22 @@
 
   </main>
 
+  <div id="faq-image-gallery" class="faq-image-gallery" role="dialog" aria-modal="true"
+       aria-labelledby="faq-image-gallery-caption" hidden>
+    <button id="faq-image-gallery-close" class="faq-image-gallery__close" type="button" aria-label="Close image gallery">×</button>
+    <div class="faq-image-gallery__content">
+      <button id="faq-image-gallery-previous" class="faq-image-gallery__nav faq-image-gallery__nav--previous" type="button" aria-label="Previous image">‹</button>
+      <figure class="faq-image-gallery__figure">
+        <img id="faq-image-gallery-image" src="" alt="" />
+        <figcaption id="faq-image-gallery-caption" class="faq-image-gallery__caption" aria-live="polite">
+          <span id="faq-image-gallery-title"></span>
+          <span id="faq-image-gallery-count"></span>
+        </figcaption>
+      </figure>
+      <button id="faq-image-gallery-next" class="faq-image-gallery__nav faq-image-gallery__nav--next" type="button" aria-label="Next image">›</button>
+    </div>
+  </div>
+
   <!-- ══════════════════════════════════════════════════════
        FOOTER
        ══════════════════════════════════════════════════════ -->
@@ -801,7 +825,7 @@
 
   <!-- Scripts (no CDN — works on file://) -->
   <script src="i18n.js?v=20260720-latex-question-short"></script>
-  <script src="main.js?v=20260720-stats-share"></script>
+  <script src="main.js?v=20260720-faq-gallery-personalisation"></script>
 
 </body>
 </html>

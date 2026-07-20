@@ -392,6 +392,121 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 })();
 
+(function initFaqImageGallery() {
+  const lightbox = document.getElementById('faq-image-gallery');
+  const closeButton = document.getElementById('faq-image-gallery-close');
+  const previousButton = document.getElementById('faq-image-gallery-previous');
+  const nextButton = document.getElementById('faq-image-gallery-next');
+  const lightboxImage = document.getElementById('faq-image-gallery-image');
+  const title = document.getElementById('faq-image-gallery-title');
+  const count = document.getElementById('faq-image-gallery-count');
+  const triggers = Array.from(document.querySelectorAll('.faq__theme-zoom'));
+
+  if (!lightbox || !closeButton || !previousButton || !nextButton || !lightboxImage || !title || !count || !triggers.length) return;
+
+  let activeGallery = [];
+  let activeIndex = 0;
+  let opener = null;
+  let activeCaption = '';
+
+  function renderImage() {
+    const trigger = activeGallery[activeIndex];
+    const sourceImage = trigger?.querySelector('img');
+    if (!sourceImage) return;
+
+    lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
+    lightboxImage.alt = sourceImage.alt;
+    title.textContent = activeCaption || sourceImage.alt;
+    count.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
+
+    const hasMultipleImages = activeGallery.length > 1;
+    previousButton.hidden = !hasMultipleImages;
+    nextButton.hidden = !hasMultipleImages;
+    previousButton.setAttribute('aria-label', `Previous image: ${activeGallery[(activeIndex - 1 + activeGallery.length) % activeGallery.length]?.querySelector('img')?.alt || ''}`);
+    nextButton.setAttribute('aria-label', `Next image: ${activeGallery[(activeIndex + 1) % activeGallery.length]?.querySelector('img')?.alt || ''}`);
+  }
+
+  function closeGallery() {
+    if (lightbox.hidden) return;
+
+    lightbox.hidden = true;
+    lightbox.classList.remove('faq-image-gallery--stats');
+    document.body.classList.remove('faq-gallery-open');
+    opener?.focus();
+  }
+
+  function showImage(offset) {
+    if (!activeGallery.length) return;
+    activeIndex = (activeIndex + offset + activeGallery.length) % activeGallery.length;
+    renderImage();
+  }
+
+  function openGallery(trigger) {
+    const gallery = trigger.closest('.faq__theme-gallery');
+    activeGallery = gallery
+      ? Array.from(gallery.querySelectorAll('.faq__theme-zoom'))
+      : [trigger];
+    activeIndex = Math.max(0, activeGallery.indexOf(trigger));
+    opener = trigger;
+    activeCaption = gallery?.dataset.galleryCaption || '';
+
+    lightbox.classList.toggle('faq-image-gallery--stats', gallery?.classList.contains('faq__theme-gallery--stats'));
+    renderImage();
+    lightbox.hidden = false;
+    document.body.classList.add('faq-gallery-open');
+    requestAnimationFrame(() => closeButton.focus());
+  }
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => openGallery(trigger));
+  });
+
+  closeButton.addEventListener('click', closeGallery);
+  previousButton.addEventListener('click', () => showImage(-1));
+  nextButton.addEventListener('click', () => showImage(1));
+
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeGallery();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (lightbox.hidden) return;
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeGallery();
+      return;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showImage(-1);
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showImage(1);
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+
+    const focusable = Array.from(lightbox.querySelectorAll('button:not([hidden]):not([disabled])'));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first || !last) return;
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+})();
+
 (function initFaqAccordion() {
   const toggles = Array.from(document.querySelectorAll('.faq__toggle'));
   if (!toggles.length) return;
