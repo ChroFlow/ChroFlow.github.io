@@ -2444,6 +2444,16 @@ a.hero__workflow-chip:focus-visible {
 .release-notes li + li {
   margin-top: 0.7rem;
 }
+.release-notes__link {
+  color: #3f6387;
+  font-weight: var(--fw-regular);
+  text-decoration: underline;
+  text-decoration-color: rgba(63, 99, 135, 0.4);
+  text-underline-offset: 0.16em;
+}
+.release-notes__link:hover {
+  text-decoration-color: currentColor;
+}
 
 /* Install guide */
 .install-guide {
@@ -3171,6 +3181,7 @@ a.hero__workflow-chip:focus-visible {
 }
 .faq__item {
   border-top: 1px solid #e5e5e7;
+  scroll-margin-top: calc(var(--topnav-h) + 1rem);
 }
 .faq__item:last-child {
   border-bottom: 1px solid #e5e5e7;
@@ -3244,6 +3255,9 @@ a.hero__workflow-chip:focus-visible {
 .faq__answer--install {
   padding-left: 1.65rem;
 }
+.faq__answer--theme {
+  padding-bottom: 1.85rem;
+}
 .faq__install-content {
   display: flex;
   flex-direction: column;
@@ -3278,6 +3292,73 @@ a.hero__workflow-chip:focus-visible {
 }
 .faq__a a:hover {
   text-decoration-color: currentColor;
+}
+.faq__theme-gallery {
+  margin: 0 -2.3rem 0 -1.65rem;
+}
+.faq__theme-previews {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 0.15rem 14% 0.3rem 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.faq__theme-previews::-webkit-scrollbar {
+  display: none;
+}
+.faq__theme-card {
+  margin: 0;
+  flex: 0 0 min(86%, 42rem);
+  scroll-snap-align: start;
+}
+.faq__theme-gallery--stats .faq__theme-card {
+  flex-basis: min(54%, 26rem);
+}
+.faq__theme-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #dedee2;
+  border-radius: 8px;
+  background: #f7f7f8;
+}
+.faq__theme-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.58rem;
+  margin-top: 0.6rem;
+}
+.faq__theme-pager-btn {
+  position: relative;
+  width: 1.28rem;
+  height: 1.28rem;
+  border-radius: 999px;
+}
+.faq__theme-pager-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 19, 0.28);
+  transform: translate(-50%, -50%);
+  transition: width 0.22s ease, background 0.22s ease;
+}
+.faq__theme-pager-btn.is-active::before {
+  width: 1.55rem;
+  height: 0.38rem;
+  background: rgba(17, 17, 19, 0.78);
+}
+.faq__theme-pager-btn:focus-visible {
+  outline: 2px solid rgba(17, 17, 19, 0.45);
+  outline-offset: 0.2rem;
 }
 .platform-shortcut {
   display: none;
@@ -3325,6 +3406,28 @@ kbd.platform-shortcut {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.faq-inline-icon--theme {
+  width: 15px;
+  height: 15px;
+  margin: 0 0.18em 0 0;
+  vertical-align: -0.12em;
+}
+.faq-inline-icon--theme svg {
+  stroke-width: 2.15;
+}
+.faq-inline-icon--theme svg circle {
+  fill: currentColor;
+  stroke: none;
+}
+.faq-inline-icon--stats-export {
+  width: 16px;
+  height: 16px;
+  margin: 0 0.16em;
+  vertical-align: -0.18em;
+}
+.faq-inline-icon--stats-export svg {
+  stroke-width: 2;
+}
 
 @media (max-width: 640px) {
   .faq__toggle {
@@ -3342,6 +3445,10 @@ kbd.platform-shortcut {
   .faq__a {
     text-align: left;
     hyphens: manual;
+  }
+  .faq__theme-gallery {
+    margin-left: -1.65rem;
+    margin-right: 0;
   }
 }
 
